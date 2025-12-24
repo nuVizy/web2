@@ -220,7 +220,7 @@ const Home = () => {
           ))}
         </div>
 
-        <p className="mt-4 text-xs text-[var(--muted)]">Tip: keep this list short and truthful. Link to case studies when you can.</p>
+        <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
 
       {/* Work / Approach */}
