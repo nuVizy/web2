@@ -34,7 +34,6 @@ const Photography = () => {
           />
           <div className="absolute inset-0 hero-abstract" />
           <div className="absolute -top-20 -right-28 opacity-40">
-            <AbstractArt className="h-[520px] w-[720px]" variant="soft" />
           </div>
           <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
         </div>
