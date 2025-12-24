@@ -66,7 +66,7 @@ const Home = () => {
     decoding="async"
   />
   {/* keep readability consistent */}
-  <div className="absolute inset-0 bg-black/35" />
+  <div className="absolute inset-0 bg-black/50" />
   <div className="absolute inset-0 opacity-10 bg-gradient-to-b from-black/10 to-transparent" />
 </div>
 
