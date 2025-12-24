@@ -194,7 +194,7 @@ const Home = () => {
       </Section>
 
       <FullBleedImageSection
-  className="min-h-[56svh] md:min-h-[50svh]"
+  className="min-h-[56svh] md:min-h-[40svh]"
   image={{ src: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg", alt: "" }}
   kicker="On location"
   title="Small crews. Clear direction."
