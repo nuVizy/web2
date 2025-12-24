@@ -64,29 +64,28 @@ const Header = () => {
             ))}
           </nav>
 
+          {/* Mobile toggle (× / +) */}
           <button
             type="button"
-            className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.10)] text-[var(--muted)]"
+            className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.10)]"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-controls="mobile-nav"
             aria-expanded={open}
             onClick={handleToggle}
           >
-            <span className="block w-6 h-0.5 bg-[var(--muted)] mb-1" />
-            <span className="block w-6 h-0.5 bg-[var(--muted)] mb-1" />
-            <span className="block w-6 h-0.5 bg-[var(--muted)]" />
+            {open ? (
+              <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">×</span>
+            ) : (
+              <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">+</span>
+            )}
           </button>
         </div>
       </Container>
 
       {/* Fullscreen mobile menu */}
       {open && (
-        <div
-          className="md:hidden fixed inset-0 z-[60] bg-black text-[var(--accent-green)]"
-          role="dialog"
-          aria-modal="true"
-        >
-          {/* Top bar (keeps brand + close) */}
+        <div className="md:hidden fixed inset-0 z-[60] bg-black text-[var(--accent-green)]" role="dialog" aria-modal="true">
+          {/* Top bar (brand + close) */}
           <div className="absolute inset-x-0 top-0">
             <Container size="lg">
               <div className="flex items-center justify-between h-20 py-4">
@@ -97,11 +96,11 @@ const Header = () => {
 
                 <button
                   type="button"
-                  className="h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.18)] text-[var(--accent-green)]"
+                  className="h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.18)]"
                   aria-label="Close menu"
                   onClick={closeMenu}
                 >
-                  <span className="font-mono text-lg leading-none">×</span>
+                  <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">×</span>
                 </button>
               </div>
             </Container>
@@ -123,7 +122,9 @@ const Header = () => {
                       classNames(
                         'min-h-[44px] inline-flex items-center gap-3 w-full font-mono text-2xl tracking-tight',
                         'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-green)] focus-visible:ring-offset-2 focus-visible:ring-offset-black',
-                        isActive ? 'text-[var(--accent-green)]' : 'text-[rgba(140,255,46,0.85)] hover:text-[var(--accent-green)]'
+                        isActive
+                          ? 'text-[var(--accent-green)]'
+                          : 'text-[rgba(140,255,46,0.85)] hover:text-[var(--accent-green)]'
                       )
                     }
                   >
