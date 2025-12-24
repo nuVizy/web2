@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0b0b;
+  --panel: #0f1112;
+  --text: #e6efe6;
+  --muted: #879389;
+  --accent-green: #8cff2e;
+  --accent-dim: rgba(140,255,46,0.12);
+
+  /* Overlay tokens (used for text-on-image readability) */
+  --overlay-strong: rgba(0,0,0,0.58);
+  --overlay-soft: rgba(0,0,0,0.38);
+
+  /* Layout tokens */
+  --gutter: 1rem; /* 16px */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 20% 10%, rgba(255,255,255,0.02), transparent 8%), var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Safe-area helpers for full-bleed sections on iOS */
+.safe-y {
+  padding-top: calc(2.75rem + env(safe-area-inset-top));
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 640px) {
+  .safe-y {
+    padding-top: calc(3.5rem + env(safe-area-inset-top));
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--accent-green); }
+
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+  border: 1px solid var(--accent-dim);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* subtle neutral texture */
+.matrix-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 100% 30px;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+/* ctx-style subtle grid and blocks */
+.ctx-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(140,255,46,0.03) 1px, transparent 1px), linear-gradient(rgba(140,255,46,0.03) 1px, transparent 1px);
+  background-size: 120px 100%, 100% 120px;
+  opacity: 0.06;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.kbd {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  color: var(--accent-green);
+  background: rgba(140,255,46,0.02);
+  border: 1px solid rgba(140,255,46,0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Code-like prefix utilities */
+.code-prefix {
+  position: relative;
+  padding-left: 2.25rem;
+  display: inline-block;
+}
+.code-prefix::before {
+  content: attr(data-prefix);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  color: var(--accent-green);
+  opacity: 0.95;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.code-prefix.block {
+  display: block;
+}
+.code-prefix.block::before {
+  top: 0.25rem;
+}
+
+/* small variant for compact labels */
+.code-prefix-sm {
+  padding-left: 1.5rem;
+}
+.code-prefix-sm::before {
+  font-size: 0.75rem;
+  top: 0.125rem;
+}
+
+/* Abstract background variants */
+.abstract-1 {
+  background-image: radial-gradient(800px circle at 10% 20%, rgba(140,255,46,0.06), transparent 8%), radial-gradient(600px circle at 90% 80%, rgba(0,140,255,0.04), transparent 10%), linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+  background-blend-mode: screen, screen, normal;
+}
+
+.abstract-2 {
+  background-image: radial-gradient(500px circle at 30% 30%, rgba(255,120,180,0.04), transparent 8%), radial-gradient(400px circle at 70% 70%, rgba(120,180,255,0.03), transparent 10%);
+  background-blend-mode: overlay;
+}
+
+.hero-abstract {
+  background-image: radial-gradient(700px circle at 15% 25%, rgba(140,255,46,0.08), transparent 12%), radial-gradient(500px circle at 85% 75%, rgba(0,140,255,0.05), transparent 12%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+/* page-level subtle abstract background */
+.page-abstract::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(900px circle at 20% 10%, rgba(140,255,46,0.02), transparent 8%), radial-gradient(700px circle at 80% 90%, rgba(0,140,255,0.015), transparent 10%);
+  opacity: 0.9;
+  mix-blend-mode: overlay;
+}

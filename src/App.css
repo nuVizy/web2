@@ -1,0 +1,107 @@
+/* -------------------------------------------
+   Matrix vibe (subtle, premium, not cheesy)
+   Drop-in overlays + utilities
+-------------------------------------------- */
+
+/* If your variables already exist, this won't break anything.
+   It only nudges the palette to a deeper "terminal" range. */
+:root {
+  /* keep your existing palette if you prefer; these are safe defaults */
+  --matrix-green: var(--accent-green, #34d399);
+  --matrix-dim: color-mix(in oklab, var(--matrix-green) 18%, transparent);
+  --matrix-dimmer: color-mix(in oklab, var(--matrix-green) 10%, transparent);
+  --matrix-glow: 0 0 18px color-mix(in oklab, var(--matrix-green) 30%, transparent);
+}
+
+/* Global background treatment: grid + deep vignette */
+body {
+  background: var(--bg);
+  position: relative;
+}
+
+/* Grid layer (very light) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* two grids: fine + coarse */
+  background-image:
+    linear-gradient(to right, var(--matrix-dimmer) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--matrix-dimmer) 1px, transparent 1px),
+    radial-gradient(1200px 700px at 20% 10%, color-mix(in oklab, var(--matrix-green) 10%, transparent), transparent 60%),
+    radial-gradient(900px 600px at 80% 30%, color-mix(in oklab, var(--matrix-green) 8%, transparent), transparent 62%),
+    radial-gradient(900px 900px at 50% 120%, rgba(0,0,0,0.55), transparent 55%);
+
+  background-size:
+    22px 22px,
+    22px 22px,
+    auto,
+    auto,
+    auto;
+
+  /* keeps it subtle */
+  opacity: 0.22;
+  mix-blend-mode: screen;
+}
+
+/* Scanlines + faint noise */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.0) 0px,
+      rgba(0, 0, 0, 0.0) 2px,
+      rgba(0, 0, 0, 0.08) 3px
+    ),
+    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.025), transparent 60%);
+
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+
+  /* tiny drift = “alive” but not distracting */
+  animation: matrix-drift 14s linear infinite;
+}
+
+@keyframes matrix-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(0, -12px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Ensure app content sits above overlays */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Utility: subtle green glow for important headings, badges, etc. */
+.matrix-glow {
+  text-shadow: var(--matrix-glow);
+}
+
+/* Utility: a “terminal glass” panel look (works with your design) */
+.matrix-panel {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--bg) 88%, rgba(0,0,0,0.35)),
+    color-mix(in oklab, var(--bg) 78%, rgba(0,0,0,0.55))
+  );
+  border: 1px solid var(--matrix-dim);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
+}
