@@ -113,9 +113,6 @@ const Home = () => {
                     <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Index</p>
                     <p className="font-mono text-xl text-[var(--text)] mt-1">Four modules, one system.</p>
                   </div>
-                  <div className="text-right">
-                    <div className="kbd">reply &lt; 1 day</div>
-                  </div>
                 </div>
 
                 <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
