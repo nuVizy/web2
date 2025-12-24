@@ -194,12 +194,15 @@ const Home = () => {
       </Section>
 
       <FullBleedImageSection
+  className="min-h-[70svh] md:min-h-[80svh]"
   image={{ src: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg", alt: "" }}
   kicker="On location"
   title="Small crews. Clear direction."
   subtitle="The work is built to travel across stills, motion and design without losing its shape."
   primaryCta={{ label: "Start a project", to: "/contact" }}
   secondaryCta={{ label: "See work", to: "/work" }}
+/>
+
 />
 
 
