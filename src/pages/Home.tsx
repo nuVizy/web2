@@ -57,13 +57,19 @@ const Home = () => {
         padClassName="pt-28 pb-14 md:pt-36 md:pb-20"
         className="relative overflow-hidden ctx-grid"
       >
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -top-24 -right-24 opacity-40">
-            <AbstractArt className="h-[520px] w-[720px]" variant="soft" />
-          </div>
-          <div className="absolute inset-0 opacity-10 bg-gradient-to-b from-black/10 to-transparent" />
-        </div>
+    <div className="absolute inset-0 pointer-events-none">
+  <img
+    src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg"
+    alt=""
+    className="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+  {/* keep readability consistent */}
+  <div className="absolute inset-0 bg-black/35" />
+  <div className="absolute inset-0 opacity-10 bg-gradient-to-b from-black/10 to-transparent" />
+</div>
+
 
         <Container size="lg" className="relative">
           <div className="grid grid-cols-12 gap-8 items-end">
