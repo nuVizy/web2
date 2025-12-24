@@ -202,7 +202,6 @@ const Home = () => {
   primaryCta={{ label: "Start a project", to: "/contact" }}
   secondaryCta={{ label: "See work", to: "/work" }}
 />
-/>
 
 
       {/* Selected collaborators (swap these for real credits) */}
