@@ -25,6 +25,13 @@ const Photography = () => {
         className="relative overflow-hidden ctx-grid"
       >
         <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
           <div className="absolute inset-0 hero-abstract" />
           <div className="absolute -top-20 -right-28 opacity-40">
             <AbstractArt className="h-[520px] w-[720px]" variant="soft" />
