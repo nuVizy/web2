@@ -213,7 +213,7 @@ const Home = () => {
         />
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-          {["MIF - Festival", "Soul:r - MC DRS", "Royal Exchange - Theatre", "Agency / Producer"].map((name) => (
+          {["MIF - Festival", "Soul:r - MC DRS", "Royal Exchange - Theatre", "Trillden - Black Josh"].map((name) => (
             <Card key={name} tone="outline" pad="sm" className="text-sm text-[var(--muted)]">
               {name}
             </Card>
