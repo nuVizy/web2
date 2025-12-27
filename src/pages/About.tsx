@@ -4,7 +4,6 @@ import Container from "../components/ui/Container";
 import ProcessTimeline from "../components/ui/ProcessTimeline";
 import Section from "../components/ui/Section";
 import SectionHeading from "../components/ui/SectionHeading";
-import TextLink from "../components/ui/TextLink";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const About = () => {
@@ -17,11 +16,11 @@ const About = () => {
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden">
-      {/* Hero */}
+      {/* Hero (FULL SCREEN) */}
       <Section
         bleed
         padClassName="pt-24 pb-12 sm:pt-28 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
       >
         {/* Background image + overlay */}
         <div className="absolute inset-0 pointer-events-none">
@@ -33,13 +32,14 @@ const About = () => {
             loading="eager"
             decoding="async"
           />
-          {/* slight dark overlay */}
+          {/* dark overlay */}
           <div className="absolute inset-0 bg-black/50" />
           {/* subtle depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         </div>
 
-        <Container size="lg" className="relative w-full">
+        {/* Content */}
+        <Container size="lg" className="relative w-full mt-auto">
           <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
             <div className="col-span-12 lg:col-span-8 min-w-0">
               <p
@@ -104,18 +104,9 @@ const About = () => {
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {[
-            {
-              title: "Restraint",
-              text: "Remove noise until the frame reads. Fewer choices, stronger outcomes.",
-            },
-            {
-              title: "Direction",
-              text: "Small crews, decisive calls, calm sets. We keep everyone aligned.",
-            },
-            {
-              title: "Systems",
-              text: "Deliverables that reuse: crops, cuts, templates, exports — all in one language.",
-            },
+            { title: "Restraint", text: "Remove noise until the frame reads. Fewer choices, stronger outcomes." },
+            { title: "Direction", text: "Small crews, decisive calls, calm sets. We keep everyone aligned." },
+            { title: "Systems", text: "Deliverables that reuse: crops, cuts, templates, exports — all in one language." },
           ].map((item) => (
             <Card key={item.title} pad="lg" className="min-w-0">
               <h3 className="font-mono text-xl text-[var(--text)]">{item.title}</h3>
@@ -147,22 +138,10 @@ const About = () => {
           <div className="lg:col-span-7 min-w-0">
             <div className="grid gap-3">
               {[
-                {
-                  k: "Photography",
-                  v: "Portraiture, campaigns, editorial — controlled light and negative space.",
-                },
-                {
-                  k: "Film",
-                  v: "Brand films and documentary sequences with deliberate pacing.",
-                },
-                {
-                  k: "Music Videos",
-                  v: "Performance led direction and cinematic cut built around rhythm.",
-                },
-                {
-                  k: "Design",
-                  v: "Identity systems, artwork, layout, and production ready templates.",
-                },
+                { k: "Photography", v: "Portraiture, campaigns, editorial — controlled light and negative space." },
+                { k: "Film", v: "Brand films and documentary sequences with deliberate pacing." },
+                { k: "Music Videos", v: "Performance led direction and cinematic cut built around rhythm." },
+                { k: "Design", v: "Identity systems, artwork, layout, and production ready templates." },
               ].map((row) => (
                 <Card key={row.k} tone="outline" pad="md" className="flex gap-6 items-start min-w-0">
                   <div className="w-28 flex-shrink-0 font-mono text-[var(--accent-green)]">{row.k}</div>
@@ -184,22 +163,10 @@ const About = () => {
         <div className="mt-8">
           <ProcessTimeline
             steps={[
-              {
-                title: "References + intention",
-                description: "You send links, constraints, and the outcome you need. We pull a clear direction from it.",
-              },
-              {
-                title: "System outline",
-                description: "Tone, palette, pacing, and deliverables — documented before production starts.",
-              },
-              {
-                title: "Production",
-                description: "Small crew, decisive direction, clean coverage — with time protected for the hero moments.",
-              },
-              {
-                title: "Post + packaging",
-                description: "Cut, grade, layouts and exports delivered with naming, crops and versions your team can reuse.",
-              },
+              { title: "References + intention", description: "You send links, constraints, and the outcome you need. We pull a clear direction from it." },
+              { title: "System outline", description: "Tone, palette, pacing, and deliverables — documented before production starts." },
+              { title: "Production", description: "Small crew, decisive direction, clean coverage — with time protected for the hero moments." },
+              { title: "Post + packaging", description: "Cut, grade, layouts and exports delivered with naming, crops and versions your team can reuse." },
             ]}
           />
         </div>
