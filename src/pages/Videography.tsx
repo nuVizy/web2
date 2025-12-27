@@ -29,7 +29,7 @@ const Videography = () => {
         {/* Hero background image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766875178/5a7e775a-3e06-4291-81b1-6dcdfafc9183.png"
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766855612/NVZ00839_kpy8vi.jpg"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover object-center"
