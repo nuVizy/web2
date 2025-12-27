@@ -21,7 +21,7 @@ const Videography = () => {
       <Section
         bleed
         padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
       >
         {/* Hero background image */}
         <div className="absolute inset-0 pointer-events-none">
@@ -36,10 +36,11 @@ const Videography = () => {
           {/* Darken for text legibility */}
           <div className="absolute inset-0 bg-black/40" />
           {/* Depth gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/55" />
         </div>
 
-        <Container size="lg" className="relative">
+        {/* Content */}
+        <Container size="lg" className="relative mt-auto">
           <div className="grid grid-cols-12 gap-10 items-end">
             <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
@@ -134,14 +135,8 @@ const Videography = () => {
                   answer:
                     'We scale between a two person mobile unit and a full crew with G&E. We keep communication crisp either way.'
                 },
-                {
-                  question: 'Revisions',
-                  answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.'
-                },
-                {
-                  question: 'Sound & music',
-                  answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
-                }
+                { question: 'Revisions', answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.' },
+                { question: 'Sound & music', answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.' }
               ]}
             />
           </div>
