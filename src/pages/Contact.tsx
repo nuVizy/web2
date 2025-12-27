@@ -1,202 +1,127 @@
-import { FormEvent, useState } from 'react';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import Input from '../components/ui/Input';
-import Select from '../components/ui/Select';
-import Textarea from '../components/ui/Textarea';
-import Section from '../components/ui/Section';
-import SectionHeading from '../components/ui/SectionHeading';
-import { usePageMeta } from '../hooks/usePageMeta';
-
-interface FormState {
-  name: string;
-  email: string;
-  projectType: string;
-  budget: string;
-  message: string;
-}
-
-const initialState: FormState = {
-  name: '',
-  email: '',
-  projectType: '',
-  budget: '',
-  message: ''
-};
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import Container from "../components/ui/Container";
+import Section from "../components/ui/Section";
+import SectionHeading from "../components/ui/SectionHeading";
+import TextLink from "../components/ui/TextLink";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const Contact = () => {
-  usePageMeta({ title: 'Contact | nuViz Studio', description: 'Contact nuViz Studio for photography, film, music video, or design projects.' });
-
-  const [form, setForm] = useState<FormState>(initialState);
-  const [errors, setErrors] = useState<Record<keyof FormState, string>>({
-    name: '',
-    email: '',
-    projectType: '',
-    budget: '',
-    message: ''
+  usePageMeta({
+    title: "Contact | nuViz Studio",
+    description: "Send a reference + intention and we’ll reply with direction, structure, and a realistic timeline.",
+    canonicalPath: "/contact",
   });
-  const [submitted, setSubmitted] = useState(false);
-
-  const validate = (): boolean => {
-    const newErrors: Record<keyof FormState, string> = { name: '', email: '', projectType: '', budget: '', message: '' };
-    if (!form.name.trim()) newErrors.name = 'Name is required';
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = 'Valid email is required';
-    if (!form.projectType) newErrors.projectType = 'Select a project type';
-    if (!form.budget) newErrors.budget = 'Select a budget range';
-    if (form.message.trim().length < 10) newErrors.message = 'Share a few more details';
-    setErrors(newErrors);
-    return Object.values(newErrors).every(val => !val);
-  };
-
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    if (!validate()) return;
-    setSubmitted(true);
-    setForm(initialState);
-  };
-
-  const handleChange = (key: keyof FormState, value: string) => {
-    setForm(prev => ({ ...prev, [key]: value }));
-    setErrors(prev => ({ ...prev, [key]: '' }));
-  };
 
   return (
-    <div>
-      <Section size="lg" padClassName="pt-28 pb-10 md:pt-32 md:pb-12" className="ctx-grid">
-        <SectionHeading
-          kicker="Contact"
-          as="h1"
-          size="lg"
-          title="Tell us what you’re building"
-          description={
-            <>
-              <p>Send a brief, a reference, or a rough idea. We’ll reply with direction, structure, and a timeline.</p>
-              <p className="mt-3">Based in Paphos, Cyprus. Built in the UK. Working across Cyprus, the UK and Europe.</p>
-              <p className="mt-3">
-                Prefer email? <span className="text-[var(--text)]">studio@nuviz.studio</span>
-              </p>
-            </>
-          }
-        />
-
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          {["Response within one business day", "Transparent scope + rights", "Small crews, clean delivery"].map((t) => (
-            <Card key={t} tone="outline" pad="sm" className="text-sm text-[var(--muted)]">
-              {t}
-            </Card>
-          ))}
+    <div className="w-full max-w-[100vw] overflow-x-hidden">
+      {/* HERO */}
+      <Section
+        bleed
+        padClassName="pt-24 pb-10 sm:pt-28 md:pt-36 md:pb-16"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
+      >
+        {/* Background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766879739/_DSC7548_aybxkv.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+          {/* dark overlay for legibility */}
+          <div className="absolute inset-0 bg-black/35" />
+          {/* depth gradient (matches your other heroes) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/55" />
         </div>
+
+        {/* Content pinned to bottom */}
+        <Container size="lg" className="relative mt-auto w-full">
+          <div className="grid grid-cols-12 gap-8 items-end">
+            <div className="col-span-12 lg:col-span-8 min-w-0">
+              <p
+                className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
+                data-prefix="//"
+              >
+                Contact
+              </p>
+
+              <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl text-[var(--text)] leading-tight">
+                Send a reference + intention.
+              </h1>
+
+              <p className="mt-4 text-[var(--muted)] max-w-2xl">
+                Links, mood, constraints, timeline — we’ll reply within one business day with direction, structure, and a
+                realistic plan.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+                <Button className="w-full sm:w-auto" to="/contact">
+                  Start a brief
+                </Button>
+                <Button className="w-full sm:w-auto" variant="ghost" to="/work">
+                  View work
+                </Button>
+                <TextLink to="/about" className="min-h-[44px]">
+                  Read the studio story
+                </TextLink>
+              </div>
+            </div>
+          </div>
+        </Container>
       </Section>
 
+      {/* CONTENT (keep your existing form/blocks here, or use this layout) */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <div className="grid gap-10 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-5">
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-5 min-w-0">
             <SectionHeading
-              kicker="What to send"
-              title="The three things that help"
+              kicker="How to brief us"
+              title="Make it easy to say yes"
               description={
-                <ul className="mt-2 space-y-2">
-                  <li>• A reference (links, screenshots, moods)</li>
-                  <li>• The outcome you need (deliverables + where it will live)</li>
-                  <li>• Any constraints (date, location, budget range)</li>
-                </ul>
+                <>
+                  <p>Share 2–4 references, your deadline, and where it will live (web, press, socials, stage, print).</p>
+                  <p className="mt-3">If you don’t know yet, tell us the feeling and we’ll propose structure.</p>
+                </>
               }
             />
           </div>
 
-          <div className="lg:col-span-7">
-            <Card pad="lg">
-              {submitted ? (
-                <div className="space-y-3">
-                  <h2 className="font-mono text-2xl text-[var(--text)]">Received.</h2>
-                  <p className="text-[var(--muted)]">Thanks — we’ll respond with next steps shortly.</p>
-                  <Button onClick={() => setSubmitted(false)}>Send another request</Button>
-                </div>
-              ) : (
-                <form className="space-y-4" onSubmit={handleSubmit} noValidate>
-                  <div>
-                    <label htmlFor="contact-name" className="block text-sm font-semibold text-[var(--text)]">Name</label>
-                    <Input
-                      id="contact-name"
-                      type="text"
-                      value={form.name}
-                      onChange={(e) => handleChange('name', e.target.value)}
-                      className="mt-1"
-                      required
-                      autoComplete="name"
-                    />
-                    {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-email" className="block text-sm font-semibold text-[var(--text)]">Email</label>
-                    <Input
-                      id="contact-email"
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => handleChange('email', e.target.value)}
-                      className="mt-1"
-                      required
-                      autoComplete="email"
-                    />
-                    {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="contact-project-type" className="block text-sm font-semibold text-[var(--text)]">Project type</label>
-                      <Select
-                        id="contact-project-type"
-                        value={form.projectType}
-                        onChange={(e) => handleChange('projectType', e.target.value)}
-                        className="mt-1"
-                        required
-                      >
-                        <option value="">Select</option>
-                        <option value="Photography">Photography</option>
-                        <option value="Videography">Videography</option>
-                        <option value="Music Video">Music Video</option>
-                        <option value="Design">Design</option>
-                      </Select>
-                      {errors.projectType && <p className="text-red-400 text-xs mt-1">{errors.projectType}</p>}
-                    </div>
-
-                    <div>
-                      <label htmlFor="contact-budget" className="block text-sm font-semibold text-[var(--text)]">Budget range</label>
-                      <Select
-                        id="contact-budget"
-                        value={form.budget}
-                        onChange={(e) => handleChange('budget', e.target.value)}
-                        className="mt-1"
-                        required
-                      >
-                        <option value="">Select</option>
-                        <option value="Under 3k">Under €3k</option>
-                        <option value="3k-7k">€3k – €7k</option>
-                        <option value="7k-15k">€7k – €15k</option>
-                        <option value="15k+">€15k+</option>
-                      </Select>
-                      {errors.budget && <p className="text-red-400 text-xs mt-1">{errors.budget}</p>}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-notes" className="block text-sm font-semibold text-[var(--text)]">Project notes</label>
-                    <Textarea
-                      id="contact-notes"
-                      value={form.message}
-                      onChange={(e) => handleChange('message', e.target.value)}
-                      className="mt-1"
-                      placeholder="Links, dates, location, deliverables…"
-                      required
-                    />
-                    {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
-                  </div>
-
-                  <Button type="submit">Send request</Button>
-                </form>
-              )}
+          <div className="lg:col-span-7 min-w-0 grid gap-4">
+            <Card className="w-full" pad="lg">
+              <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Response</p>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                Usually within <span className="text-[var(--text)] font-mono">&lt; 1 business day</span>.
+              </p>
             </Card>
+
+            <Card className="w-full" pad="lg">
+              <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Email</p>
+              <p className="mt-2 text-sm text-[var(--muted)] break-all">
+                studio@nuviz.studio
+              </p>
+              <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                {/* If your Button supports external links, switch to it.
+                    Otherwise keep this as a TextLink or plain <a>. */}
+                <a
+                  href="mailto:studio@nuviz.studio"
+                  className="min-h-[44px] inline-flex items-center justify-center border border-[var(--accent-dim)] px-4 text-sm text-[var(--text)] hover:text-[var(--accent-green)] transition-colors"
+                >
+                  Email us
+                </a>
+                <a
+                  href="mailto:studio@nuviz.studio?subject=Project%20enquiry%20—%20nuViz"
+                  className="min-h-[44px] inline-flex items-center justify-center border border-[var(--accent-dim)] px-4 text-sm text-[var(--muted)] hover:text-[var(--accent-green)] transition-colors"
+                >
+                  Start a structured brief
+                </a>
+              </div>
+            </Card>
+
+            {/* If you already have a ContactForm component, drop it here */}
+            {/* <ContactForm /> */}
           </div>
         </div>
       </Section>
