@@ -1,4 +1,3 @@
-import AbstractArt from "../components/ui/AbstractArt";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import Container from "../components/ui/Container";
@@ -17,61 +16,76 @@ const About = () => {
   });
 
   return (
-    <div>
+    <div className="w-full max-w-[100vw] overflow-x-hidden">
       {/* Hero */}
       <Section
         bleed
-        padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
+        padClassName="pt-24 pb-12 sm:pt-28 md:pt-36 md:pb-16"
         className="relative overflow-hidden ctx-grid"
       >
+        {/* Background image + overlay */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -bottom-28 -left-32 opacity-35">
-            <AbstractArt className="h-[560px] w-[760px]" variant="soft" />
-          </div>
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/15 to-transparent" />
+          <img
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766855976/NVZ03901_a8iebk.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+          {/* slight dark overlay */}
+          <div className="absolute inset-0 bg-black/35" />
+          {/* subtle depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         </div>
 
-        <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-10 items-end">
-            <div className="col-span-12 lg:col-span-8">
+        <Container size="lg" className="relative w-full">
+          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
+            <div className="col-span-12 lg:col-span-8 min-w-0">
               <p
                 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
                 data-prefix="//"
               >
                 About
               </p>
+
               <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl text-[var(--text)] leading-tight">
                 We build visual systems — not one offs.
               </h1>
+
               <p className="mt-4 text-[var(--muted)] max-w-2xl">
                 nuViz started in the UK and now operates from Paphos, Cyprus. We work with artists, brands, labels and stages
                 to produce photography, film, music videos and design that share one consistent language.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Button to="/contact">Work with us</Button>
-                <Button variant="ghost" to="/work">
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                <Button className="w-full sm:w-auto" to="/contact">
+                  Work with us
+                </Button>
+                <Button className="w-full sm:w-auto" variant="ghost" to="/work">
                   View work
                 </Button>
-                <TextLink to="/photography">Explore services</TextLink>
+                <TextLink to="/photography" className="min-h-[44px]">
+                  Explore services
+                </TextLink>
               </div>
             </div>
 
-            <aside className="col-span-12 lg:col-span-4">
-              <Card pad="lg">
+            <aside className="col-span-12 lg:col-span-4 min-w-0">
+              <Card pad="lg" className="w-full">
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Studio</p>
                 <div className="mt-3 space-y-3 text-sm">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-3 min-w-0">
                     <span className="text-[var(--muted)]">Base</span>
-                    <span className="text-[var(--text)]">Paphos, Cyprus</span>
+                    <span className="text-[var(--text)] text-right">Paphos, Cyprus</span>
                   </div>
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-3 min-w-0">
                     <span className="text-[var(--muted)]">Roots</span>
-                    <span className="text-[var(--text)]">United Kingdom</span>
+                    <span className="text-[var(--text)] text-right">United Kingdom</span>
                   </div>
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-3 min-w-0">
                     <span className="text-[var(--muted)]">Response</span>
-                    <span className="text-[var(--text)]">&lt; 1 business day</span>
+                    <span className="text-[var(--text)] text-right">&lt; 1 business day</span>
                   </div>
                 </div>
                 <div className="mt-5 border-t border-[var(--accent-dim)] pt-4 text-sm text-[var(--muted)]">
@@ -106,7 +120,7 @@ const About = () => {
               text: "Deliverables that reuse: crops, cuts, templates, exports — all in one language.",
             },
           ].map((item) => (
-            <Card key={item.title} pad="lg">
+            <Card key={item.title} pad="lg" className="min-w-0">
               <h3 className="font-mono text-xl text-[var(--text)]">{item.title}</h3>
               <p className="mt-2 text-sm text-[var(--muted)]">{item.text}</p>
             </Card>
@@ -117,7 +131,7 @@ const About = () => {
       {/* What we do */}
       <Section size="lg" tone="borderTop">
         <div className="grid gap-10 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 min-w-0">
             <SectionHeading
               kicker="What we do"
               title="Four disciplines, one language"
@@ -132,7 +146,8 @@ const About = () => {
               }
             />
           </div>
-          <div className="lg:col-span-7">
+
+          <div className="lg:col-span-7 min-w-0">
             <div className="grid gap-3">
               {[
                 {
@@ -152,9 +167,9 @@ const About = () => {
                   v: "Identity systems, artwork, layout, and production ready templates.",
                 },
               ].map((row) => (
-                <Card key={row.k} tone="outline" pad="md" className="flex gap-6 items-start">
+                <Card key={row.k} tone="outline" pad="md" className="flex gap-6 items-start min-w-0">
                   <div className="w-28 flex-shrink-0 font-mono text-[var(--accent-green)]">{row.k}</div>
-                  <div className="text-sm text-[var(--muted)]">{row.v}</div>
+                  <div className="text-sm text-[var(--muted)] min-w-0">{row.v}</div>
                 </Card>
               ))}
             </div>
@@ -196,15 +211,17 @@ const About = () => {
       {/* CTA */}
       <Section size="lg" tone="borderTop" padClassName="py-14 md:py-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-xl text-[var(--text)]">Want a system built around your next release?</h2>
             <p className="text-[var(--muted)] mt-2 max-w-2xl">
               Send a brief, a reference, or even a voice note. We’ll reply within one business day.
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <Button to="/contact">Start a project</Button>
-            <Button variant="ghost" to="/work">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+            <Button className="w-full sm:w-auto" to="/contact">
+              Start a project
+            </Button>
+            <Button className="w-full sm:w-auto" variant="ghost" to="/work">
               View work
             </Button>
           </div>
