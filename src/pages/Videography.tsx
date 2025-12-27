@@ -12,16 +12,19 @@ import { videographyProjects } from '../content/portfolio';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const Videography = () => {
-  usePageMeta({ title: 'Videography | nuViz Studio', description: 'Film direction and cinematography by nuViz Studio.' });
+  usePageMeta({
+    title: 'Videography | nuViz Studio',
+    description: 'Film direction and cinematography by nuViz Studio.'
+  });
 
   const featuredFilm = videographyProjects[0];
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="w-full max-w-[100vw] overflow-x-hidden">
       <Section
         bleed
         padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col w-full max-w-full"
       >
         {/* Hero background image */}
         <div className="absolute inset-0 pointer-events-none">
@@ -33,15 +36,13 @@ const Videography = () => {
             loading="eager"
             decoding="async"
           />
-          {/* Darken for text legibility */}
           <div className="absolute inset-0 bg-black/40" />
-          {/* Depth gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/55" />
         </div>
 
-        {/* Content */}
-        <Container size="lg" className="relative mt-auto">
-          <div className="grid grid-cols-12 gap-10 items-end">
+        {/* Content pinned to bottom */}
+        <Container size="lg" className="relative mt-auto w-full max-w-full">
+          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end w-full min-w-0">
             <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
                 kicker="Videography"
@@ -52,7 +53,7 @@ const Videography = () => {
                       Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep
                       stories human while keeping crews nimble.
                     </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                    <div className="mt-6 flex flex-wrap items-center gap-4 min-w-0">
                       <Button to="/contact">Start a project</Button>
                       <Button variant="ghost" to="/music-videos">
                         See music videos
@@ -78,18 +79,20 @@ const Videography = () => {
       </Section>
 
       {featuredFilm ? (
-        <FullBleedImageSection
-          image={featuredFilm.coverImage}
-          kicker="Videography"
-          title="Cinematic coverage, calm logistics"
-          subtitle="From treatment to delivery, we keep crews lean and outputs ready for web, broadcast, and socials."
-          primaryCta={{ label: 'Request a quote', to: '/contact' }}
-          secondaryCta={{ label: 'View work', to: '/work' }}
-        />
+        <div className="w-full max-w-[100vw] overflow-x-hidden">
+          <FullBleedImageSection
+            image={featuredFilm.coverImage}
+            kicker="Videography"
+            title="Cinematic coverage, calm logistics"
+            subtitle="From treatment to delivery, we keep crews lean and outputs ready for web, broadcast, and socials."
+            primaryCta={{ label: 'Request a quote', to: '/contact' }}
+            secondaryCta={{ label: 'View work', to: '/work' }}
+          />
+        </div>
       ) : null}
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <div className="grid gap-8 lg:grid-cols-2 items-start">
+        <div className="grid gap-8 lg:grid-cols-2 items-start min-w-0">
           <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Brand films & events</h2>
             <p className="text-[var(--muted)] mb-4">
@@ -111,7 +114,9 @@ const Videography = () => {
               <li>Color graded stills pulled from the footage.</li>
             </ul>
             <h4 className="font-semibold mt-4 text-[var(--text)]">Typical timelines</h4>
-            <p className="text-sm text-[var(--muted)]">Production in 1–3 days, first edit in 7 days, final masters in 12–18 days.</p>
+            <p className="text-sm text-[var(--muted)]">
+              Production in 1–3 days, first edit in 7 days, final masters in 12–18 days.
+            </p>
           </Card>
         </div>
       </Section>
@@ -119,13 +124,19 @@ const Videography = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <SectionHeaderRow
           title="Selected films"
-          action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>}
+          action={
+            <TextLink className="min-h-[44px]" to="/work">
+              View all work
+            </TextLink>
+          }
         />
-        <ProjectGrid projects={videographyProjects} />
+        <div className="min-w-0">
+          <ProjectGrid projects={videographyProjects} />
+        </div>
       </Section>
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <div className="grid gap-6 lg:grid-cols-2 items-center">
+        <div className="grid gap-6 lg:grid-cols-2 items-center min-w-0">
           <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Process clarity</h2>
             <FAQAccordion
@@ -135,8 +146,14 @@ const Videography = () => {
                   answer:
                     'We scale between a two person mobile unit and a full crew with G&E. We keep communication crisp either way.'
                 },
-                { question: 'Revisions', answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.' },
-                { question: 'Sound & music', answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.' }
+                {
+                  question: 'Revisions',
+                  answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.'
+                },
+                {
+                  question: 'Sound & music',
+                  answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
+                }
               ]}
             />
           </div>
