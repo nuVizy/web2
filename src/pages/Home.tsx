@@ -21,10 +21,8 @@ const Home = () => {
       "nuViz is a visual systems studio — built in the UK and now based in Paphos, Cyprus. Photography, film, music videos and design for artists, brands, labels and stages.",
     canonicalPath: "/",
     ogType: "website",
-    // ogImage: "/og.jpg", // add later when you have one
+    // ogImage: "/og.jpg",
   });
-
-  const featuredProject = allProjects.find((p) => p.slug === "halcyon-brand-film") ?? allProjects[0];
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden">
@@ -63,13 +61,10 @@ const Home = () => {
             loading="eager"
             decoding="async"
           />
-          {/* Darker overlay for legibility */}
           <div className="absolute inset-0 bg-black/15" />
-          {/* Depth gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/25 to-black/35" />
         </div>
 
-        {/* Pinned to bottom */}
         <Container size="lg" className="relative mt-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
             <header className="col-span-12 lg:col-span-8 min-w-0">
@@ -151,61 +146,65 @@ const Home = () => {
         secondaryCta={{ label: "See work", to: "/work" }}
       />
 
-      {/* Selected collaborators / credits */}
-<div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
-  <div className="flex items-center justify-between gap-4 px-4 py-3 border-b border-[var(--accent-dim)]">
-    <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
-      <span className="text-[var(--accent-green)]">//</span> Selected credits
-    </p>
-    <p className="font-mono text-xs text-[var(--muted)]">Index</p>
-  </div>
+      {/* Selected collaborators / credits (FIXED: wrapped in Section) */}
+      <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
+        <SectionHeading
+          kicker="Selected collaborators"
+          title="Work that lives in culture facing rooms."
+          description="Ask if you would like references or project examples."
+        />
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-    {[
-      "MIF | Festival",
-      "Soul:r | MC DRS",
-      "Royal Exchange | Theatre",
-      "Trillden | Black Josh",
-      "Children of Zeus",
-      "Goldie",
-      "Warehouse Project",
-      "Hit + Run",
-      "Shotty Horror",
-      "Sangy",
-      "Killa P",
-      "Chimpo",
-      "Levelz",
-      "V Festival",
-      "Parklife Festival",
-      "Nick Shahlavi",
-      "Space Cadet",
-      "DJ EZ",
-      "Bicep",
-      "Bugsy Malone",
-      "SL",
-    ].map((name) => (
-      <div
-        key={name}
-        className="group flex items-center justify-between gap-4 px-4 py-3 border-t border-[var(--accent-dim)] min-w-0"
-      >
-        <div className="flex items-center gap-3 min-w-0">
-          <span className="font-mono text-[var(--accent-green)] opacity-70 group-hover:opacity-100">
-            &gt;
-          </span>
-          <span className="text-sm text-[var(--muted)] truncate group-hover:text-[var(--text)]">
-            {name}
-          </span>
+        <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
+          <div className="flex items-center justify-between gap-4 px-4 py-3 border-b border-[var(--accent-dim)]">
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
+              <span className="text-[var(--accent-green)]">//</span> Selected credits
+            </p>
+            <p className="font-mono text-xs text-[var(--muted)]">Index</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "MIF | Festival",
+              "Soul:r | MC DRS",
+              "Royal Exchange | Theatre",
+              "Trillden | Black Josh",
+              "Children of Zeus",
+              "Goldie",
+              "Warehouse Project",
+              "Hit + Run",
+              "Shotty Horror",
+              "Sangy",
+              "Killa P",
+              "Chimpo",
+              "Levelz",
+              "V Festival",
+              "Parklife Festival",
+              "Nick Shahlavi",
+              "Space Cadet",
+              "DJ EZ",
+              "Bicep",
+              "Bugsy Malone",
+              "SL",
+            ].map((name) => (
+              <div
+                key={name}
+                className="group flex items-center justify-between gap-4 px-4 py-3 border-t border-[var(--accent-dim)] min-w-0"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="font-mono text-[var(--accent-green)] opacity-70 group-hover:opacity-100">
+                    &gt;
+                  </span>
+                  <span className="text-sm text-[var(--muted)] truncate group-hover:text-[var(--text)]">
+                    {name}
+                  </span>
+                </div>
+                <span className="font-mono text-xs text-[var(--muted)] opacity-60 group-hover:opacity-100">
+                  ↗
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-        <span className="font-mono text-xs text-[var(--muted)] opacity-60 group-hover:opacity-100">
-          ↗
-        </span>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-        <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
 
       {/* Work / Approach */}
@@ -264,11 +263,7 @@ const Home = () => {
 
       {/* Testimonials */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
-        <SectionHeading
-          kicker="Notes"
-          title="What clients tend to say"
-          description=""
-        />
+        <SectionHeading kicker="Notes" title="What clients tend to say" description="" />
         <div className="mt-8">
           <TestimonialBlock
             testimonials={[
@@ -288,15 +283,18 @@ const Home = () => {
             items={[
               {
                 question: "Where are you based?",
-                answer: "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
+                answer:
+                  "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
               },
               {
                 question: "What kinds of clients do you work with?",
-                answer: "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
+                answer:
+                  "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
               },
               {
                 question: "What’s the usual process?",
-                answer: "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
+                answer:
+                  "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
               },
               { question: "How fast do you reply?", answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline." },
             ]}
