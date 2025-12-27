@@ -84,7 +84,7 @@ export const photographyProjects: Project[] = [
     description:
       'Event coverage at House of Vans for CASISDEAD — raw crowd energy, tight stage moments, and atmospheric details in low light.',
     coverImage: {
-      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857265/DSC07052_vs8m5g.jpg',
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855718/DSC09827_fhzbhx.jpg',
       alt: 'CASISDEAD performing at House of Vans — event photography'
     },
     galleryImages: [
