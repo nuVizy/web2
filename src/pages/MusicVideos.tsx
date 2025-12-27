@@ -22,9 +22,8 @@ const MusicVideos = () => {
       {/* HERO */}
       <Section
         bleed
-        // shorter + cleaner on mobile
         padClassName="pt-20 pb-10 md:pt-28 md:pb-14"
-        className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-[78vh]"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-[78vh] flex flex-col"
       >
         {/* Fullscreen background image */}
         <div className="absolute inset-0 pointer-events-none">
@@ -36,15 +35,12 @@ const MusicVideos = () => {
             loading="eager"
             decoding="async"
           />
-
-          {/* darken for legibility */}
           <div className="absolute inset-0 bg-black/35" />
-
-          {/* depth gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45" />
         </div>
 
-        <Container size="lg" className="relative w-full">
+        {/* Push content to bottom */}
+        <Container size="lg" className="relative w-full mt-auto">
           <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
             <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
