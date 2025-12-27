@@ -156,7 +156,7 @@ const Home = () => {
         <SectionHeading
           kicker="Selected collaborators"
           title="Work that lives in culture facing rooms."
-          description="Replace the placeholders below with your real clients and collaborators when ready. This section helps trust and improves search relevance."
+          description="Clients + Collaborations"
         />
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
