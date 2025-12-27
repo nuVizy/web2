@@ -1,12 +1,9 @@
-import AbstractArt from '../components/ui/AbstractArt';
 import Button from '../components/ui/Button';
-import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
 import FAQAccordion from '../components/ui/FAQAccordion';
 import FullBleedImageSection from '../components/ui/FullBleedImageSection';
 import ProjectGrid from '../components/ui/ProjectGrid';
 import Section from '../components/ui/Section';
-import SectionHeading from '../components/ui/SectionHeading';
 import ServicesStrip from '../components/ui/ServicesStrip';
 import TextLink from '../components/ui/TextLink';
 import { photographyProjects } from '../content/portfolio';
@@ -19,60 +16,7 @@ const Photography = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <Section
-        bleed
-        padClassName="pt-20 pb-10 sm:pt-28 sm:pb-12 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid"
-      >
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-black" />
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -top-20 -right-28 opacity-40" />
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
-        </div>
-
-        <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-8 lg:gap-10 items-end">
-            <div className="col-span-12 lg:col-span-8">
-              <SectionHeading
-                kicker="Photography"
-                as="h1"
-                size="lg"
-                title="Editorial stills with patience and pulse"
-                description={
-                  <>
-                    <p>
-                      Portraits, campaigns, and still life studies built to feel deliberate. We balance light, posture, and
-                      negative space for clarity.
-                    </p>
-
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-                      <Button className="w-full sm:w-auto" to="/contact">
-                        Book a shoot
-                      </Button>
-                      <Button className="w-full sm:w-auto" variant="ghost" to="/work">
-                        View portfolio
-                      </Button>
-                    </div>
-                  </>
-                }
-              />
-            </div>
-
-            <div className="col-span-12 lg:col-span-4">
-              <Card className="w-full">
-                <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Fast facts</p>
-                <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                  <li>• Direction on set (poses, rhythm, pacing)</li>
-                  <li>• Considered retouch plus export packs</li>
-                  <li>• Coverage designed for press and campaign</li>
-                </ul>
-              </Card>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
+      {/* HERO (was previously the section below) */}
       {featuredSeries ? (
         <FullBleedImageSection
           image={featuredSeries.coverImage}
