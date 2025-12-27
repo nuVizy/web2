@@ -1,48 +1,50 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import Container from '../ui/Container'
-import { classNames } from '../../lib/classNames'
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import Container from "../ui/Container";
+import { classNames } from "../../lib/classNames";
 
 const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/work', label: 'Work' },
-  { to: '/photography', label: 'Photography' },
-  { to: '/videography', label: 'Videography' },
-  { to: '/music-videos', label: 'Music Videos' },
-  { to: '/design', label: 'Design' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' }
-]
+  { to: "/", label: "Home" },
+  { to: "/photography", label: "Photography" },
+  { to: "/videography", label: "Videography" },
+  { to: "/work", label: "Work" }, // moved after videography
+  { to: "/music-videos", label: "Music Videos" },
+  { to: "/design", label: "Design" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
 
 const Header = () => {
-  const [open, setOpen] = useState(false)
-  const location = useLocation()
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   // Close mobile menu on route change.
   useEffect(() => {
-    setOpen(false)
-  }, [location.pathname])
+    setOpen(false);
+  }, [location.pathname]);
 
   // Prevent background scroll when menu is open (mobile)
   useEffect(() => {
-    if (!open) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = prev
-    }
-  }, [open])
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
-  const handleToggle = () => setOpen((prev) => !prev)
-  const closeMenu = () => setOpen(false)
+  const handleToggle = () => setOpen((prev) => !prev);
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <Container size="lg">
         <div className="flex items-center justify-between h-20 py-4">
+          {/* Brand: nuViz // Visual Systems */}
           <Link to="/" className="flex items-center gap-3 font-display text-sm" onClick={closeMenu}>
             <span className="text-[var(--accent-green)] font-mono text-xs tracking-wider">nuViz</span>
-            <span className="tracking-tight text-[var(--muted)] text-xs">/</span>
+            <span className="text-[var(--muted)] font-mono text-xs tracking-wider">{"//"}</span>
+            <span className="text-[var(--muted)] font-mono text-xs tracking-wider">visual systems</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -50,12 +52,12 @@ const Header = () => {
               <NavLink
                 key={item.to}
                 to={item.to}
-                end={item.to === '/'}
+                end={item.to === "/"}
                 className={({ isActive }) =>
                   classNames(
-                    'transition-colors duration-200 border-b border-transparent',
-                    'hover:text-[var(--accent-green)] hover:border-[rgba(140,255,46,0.18)]',
-                    isActive ? 'text-[var(--accent-green)] border-[var(--accent-dim)]' : 'text-[var(--muted)]'
+                    "transition-colors duration-200 border-b border-transparent",
+                    "hover:text-[var(--accent-green)] hover:border-[rgba(140,255,46,0.18)]",
+                    isActive ? "text-[var(--accent-green)] border-[var(--accent-dim)]" : "text-[var(--muted)]"
                   )
                 }
               >
@@ -68,7 +70,7 @@ const Header = () => {
           <button
             type="button"
             className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.10)]"
-            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-controls="mobile-nav"
             aria-expanded={open}
             onClick={handleToggle}
@@ -89,9 +91,11 @@ const Header = () => {
           <div className="absolute inset-x-0 top-0">
             <Container size="lg">
               <div className="flex items-center justify-between h-20 py-4">
+                {/* Brand: nuViz // Visual Systems */}
                 <Link to="/" className="flex items-center gap-3 font-display text-sm" onClick={closeMenu}>
                   <span className="text-[var(--accent-green)] font-mono text-xs tracking-wider">nuViz</span>
-                  <span className="tracking-tight text-white/40 text-xs">/</span>
+                  <span className="text-white/40 font-mono text-xs tracking-wider">{"//"}</span>
+                  <span className="text-white/40 font-mono text-xs tracking-wider">visual systems</span>
                 </Link>
 
                 <button
@@ -117,14 +121,14 @@ const Header = () => {
                   <NavLink
                     to={item.to}
                     onClick={closeMenu}
-                    end={item.to === '/'}
+                    end={item.to === "/"}
                     className={({ isActive }) =>
                       classNames(
-                        'min-h-[44px] inline-flex items-center gap-3 w-full font-mono text-2xl tracking-tight',
-                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-green)] focus-visible:ring-offset-2 focus-visible:ring-offset-black',
+                        "min-h-[44px] inline-flex items-center gap-3 w-full font-mono text-2xl tracking-tight",
+                        "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-green)] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                         isActive
-                          ? 'text-[var(--accent-green)]'
-                          : 'text-[rgba(140,255,46,0.85)] hover:text-[var(--accent-green)]'
+                          ? "text-[var(--accent-green)]"
+                          : "text-[rgba(140,255,46,0.85)] hover:text-[var(--accent-green)]"
                       )
                     }
                   >
@@ -140,7 +144,7 @@ const Header = () => {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
