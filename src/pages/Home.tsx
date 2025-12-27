@@ -14,6 +14,30 @@ import TextLink from "../components/ui/TextLink";
 import { allProjects } from "../content/portfolio";
 import { usePageMeta } from "../hooks/usePageMeta";
 
+const CREDITS = [
+  "MIF | Festival",
+  "Soul:r | MC DRS",
+  "Royal Exchange | Theatre",
+  "Trillden | Black Josh",
+  "Children of Zeus",
+  "Goldie",
+  "Warehouse Project",
+  "Hit + Run",
+  "Shotty Horror",
+  "Sangy",
+  "Killa P",
+  "Chimpo",
+  "Levelz",
+  "V Festival",
+  "Parklife Festival",
+  "Nick Shahlavi",
+  "Space Cadet",
+  "DJ EZ",
+  "Bicep",
+  "Bugsy Malone",
+  "SL",
+];
+
 const Home = () => {
   usePageMeta({
     title: "nuViz Studio | Visual Systems for Photography, Film & Design",
@@ -65,6 +89,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/25 to-black/35" />
         </div>
 
+        {/* Pinned to bottom */}
         <Container size="lg" className="relative mt-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
             <header className="col-span-12 lg:col-span-8 min-w-0">
@@ -146,12 +171,12 @@ const Home = () => {
         secondaryCta={{ label: "See work", to: "/work" }}
       />
 
-      {/* Selected collaborators / credits (FIXED: wrapped in Section) */}
+      {/* Selected collaborators / credits (Ticker) */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
         <SectionHeading
           kicker="Selected collaborators"
           title="Work that lives in culture facing rooms."
-          description="Ask if you would like references or project examples."
+          description="Hover/focus to pause the ticker. Reduced motion stops animation automatically."
         />
 
         <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
@@ -159,50 +184,39 @@ const Home = () => {
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
               <span className="text-[var(--accent-green)]">//</span> Selected credits
             </p>
-            <p className="font-mono text-xs text-[var(--muted)]">Index</p>
+            <p className="font-mono text-xs text-[var(--muted)]">Ticker</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "MIF | Festival",
-              "Soul:r | MC DRS",
-              "Royal Exchange | Theatre",
-              "Trillden | Black Josh",
-              "Children of Zeus",
-              "Goldie",
-              "Warehouse Project",
-              "Hit + Run",
-              "Shotty Horror",
-              "Sangy",
-              "Killa P",
-              "Chimpo",
-              "Levelz",
-              "V Festival",
-              "Parklife Festival",
-              "Nick Shahlavi",
-              "Space Cadet",
-              "DJ EZ",
-              "Bicep",
-              "Bugsy Malone",
-              "SL",
-            ].map((name) => (
-              <div
-                key={name}
-                className="group flex items-center justify-between gap-4 px-4 py-3 border-t border-[var(--accent-dim)] min-w-0"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="font-mono text-[var(--accent-green)] opacity-70 group-hover:opacity-100">
-                    &gt;
-                  </span>
-                  <span className="text-sm text-[var(--muted)] truncate group-hover:text-[var(--text)]">
-                    {name}
-                  </span>
-                </div>
-                <span className="font-mono text-xs text-[var(--muted)] opacity-60 group-hover:opacity-100">
-                  ↗
-                </span>
-              </div>
+          {/* Screen reader friendly, non-duplicated list */}
+          <ul className="sr-only">
+            {CREDITS.map((name) => (
+              <li key={name}>{name}</li>
             ))}
+          </ul>
+
+          {/* Marquee */}
+          <div
+            className="nuviz-marquee relative"
+            style={{ ["--nuviz-marquee-duration" as any]: "30s" }}
+            aria-label="Selected credits ticker. Hover to pause."
+          >
+            {/* edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-[var(--panel)] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 bg-gradient-to-l from-[var(--panel)] to-transparent" />
+
+            {/* duplicate the content for seamless looping */}
+            <div className="nuviz-marquee__track gap-6 px-4 py-4" aria-hidden="true">
+              {[...CREDITS, ...CREDITS].map((name, i) => (
+                <span
+                  key={`${name}-${i}`}
+                  className="inline-flex items-center gap-3 whitespace-nowrap text-sm text-[var(--muted)]"
+                >
+                  <span className="font-mono text-[var(--accent-green)] opacity-70">&gt;</span>
+                  <span className="hover:text-[var(--text)] transition-colors">{name}</span>
+                  <span className="font-mono text-[var(--accent-dim)] opacity-50">/</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
