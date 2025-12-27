@@ -25,13 +25,13 @@ const MusicVideos = () => {
         padClassName="pt-20 pb-10 md:pt-28 md:pb-14"
         className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-[78vh] flex flex-col"
       >
-        {/* Fullscreen background image */}
+        {/* Fullscreen background image (centered on mobile) */}
         <div className="absolute inset-0 pointer-events-none">
           <img
             src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover opacity-85"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-85"
             loading="eager"
             decoding="async"
           />
@@ -39,7 +39,7 @@ const MusicVideos = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
         </div>
 
-        {/* Content pinned to bottom */}
+        {/* Text + CTAs pinned to bottom */}
         <Container size="lg" className="relative w-full mt-auto">
           <div className="max-w-3xl min-w-0">
             <SectionHeading
