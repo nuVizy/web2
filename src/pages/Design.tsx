@@ -1,6 +1,5 @@
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
-import Card from '../components/ui/Card';
 import ProjectGrid from '../components/ui/ProjectGrid';
 import Section from '../components/ui/Section';
 import SectionHeaderRow from '../components/ui/SectionHeaderRow';
@@ -40,41 +39,32 @@ const Design = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" />
         </div>
 
-        {/* On mobile: near top. On desktop: pinned to bottom */}
-        <Container size="lg" className="relative w-full mt-0 pt-4 sm:pt-6 md:pt-0 md:mt-auto">
-          <div className="grid grid-cols-12 gap-8 md:gap-10 items-start md:items-end">
-            <div className="col-span-12 lg:col-span-8 min-w-0">
-              <SectionHeading
-                kicker="Design"
-                title="Identity and artwork with intent"
-                description={
-                  <>
-                    <p>
-                      Brand systems, posters, album covers, and social kits that translate across formats. Grid first, with
-                      cinematic restraint.
-                    </p>
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-                      <Button className="w-full sm:w-auto" to="/contact">
-                        Start a brief
-                      </Button>
-                      <Button className="w-full sm:w-auto" variant="ghost" to="/work">
-                        See portfolio
-                      </Button>
-                    </div>
-                  </>
-                }
-              />
-            </div>
+        {/* Layout: text near top on mobile, CTAs pinned to bottom on mobile */}
+        <Container size="lg" className="relative w-full flex flex-col flex-1 pt-4 sm:pt-6 md:pt-0 md:mt-auto">
+          <div className="max-w-3xl min-w-0">
+            <SectionHeading
+              kicker="Design"
+              title="Identity and artwork with intent"
+              description={
+                <>
+                  <p>
+                    Brand systems, posters, album covers, and social kits that translate across formats. Grid first, with
+                    cinematic restraint.
+                  </p>
+                </>
+              }
+            />
+          </div>
 
-            <div className="col-span-12 lg:col-span-4 min-w-0">
-              <Card pad="lg" className="w-full">
-                <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Outputs</p>
-                <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                  <li>• Logo suite + type system</li>
-                  <li>• Key art + poster runs</li>
-                  <li>• Social templates + rollout packs</li>
-                </ul>
-              </Card>
+          {/* CTAs: bottom on mobile, normal flow on desktop */}
+          <div className="mt-auto pt-6 md:mt-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <Button className="w-full sm:w-auto" to="/contact">
+                Start a brief
+              </Button>
+              <Button className="w-full sm:w-auto" variant="ghost" to="/work">
+                See portfolio
+              </Button>
             </div>
           </div>
         </Container>
@@ -100,10 +90,10 @@ const Design = () => {
               { title: 'Social systems', text: 'Reusable templates for reels, carousels, and diaries built for speed.' },
               { title: 'Album visuals', text: 'Cover art, inner sleeves, stickers, and motion snippets aligned to your sonic palette.' }
             ].map((item) => (
-              <Card key={item.title} className="min-w-0">
+              <div key={item.title} className="border border-[var(--accent-dim)] bg-[var(--panel)] p-6">
                 <h3 className="font-mono text-lg text-[var(--text)] mb-2">{item.title}</h3>
                 <p className="text-sm text-[var(--muted)]">{item.text}</p>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -126,14 +116,14 @@ const Design = () => {
           <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Mini case notes</h2>
             <div className="space-y-3 text-sm text-[var(--muted)]">
-              <Card pad="sm">
+              <div className="border border-[var(--accent-dim)] bg-[var(--panel)] p-4">
                 <p className="font-mono text-[var(--text)]">Pulse Identity</p>
                 <p className="mt-1">Monoline logotype, animated stripes, and print specs for metallic inks.</p>
-              </Card>
-              <Card pad="sm">
+              </div>
+              <div className="border border-[var(--accent-dim)] bg-[var(--panel)] p-4">
                 <p className="font-mono text-[var(--text)]">Signal Posters</p>
                 <p className="mt-1">Grid driven posters with foil hits and QR linked microsite.</p>
-              </Card>
+              </div>
             </div>
           </div>
 
