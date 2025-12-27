@@ -1,4 +1,3 @@
-import AbstractArt from '../components/ui/AbstractArt';
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
@@ -18,22 +17,31 @@ const Videography = () => {
   const featuredFilm = videographyProjects[0];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Section
         bleed
         padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
         className="relative overflow-hidden ctx-grid"
       >
+        {/* Hero background image */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -bottom-28 -right-28 opacity-35">
-            <AbstractArt className="h-[560px] w-[760px]" variant="soft" />
-          </div>
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
+          <img
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+          {/* Darken for text legibility */}
+          <div className="absolute inset-0 bg-black/40" />
+          {/* Depth gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
         </div>
+
         <Container size="lg" className="relative">
           <div className="grid grid-cols-12 gap-10 items-end">
-            <div className="col-span-12 lg:col-span-8">
+            <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
                 kicker="Videography"
                 title="Films that breathe, with crisp pacing"
@@ -54,7 +62,7 @@ const Videography = () => {
               />
             </div>
 
-            <div className="col-span-12 lg:col-span-4">
+            <div className="col-span-12 lg:col-span-4 min-w-0">
               <Card pad="lg">
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Deliverables</p>
                 <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
@@ -81,7 +89,7 @@ const Videography = () => {
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Brand films & events</h2>
             <p className="text-[var(--muted)] mb-4">
               We choreograph camera, sound, and pacing to keep audiences close. Coverage spans keynotes, festivals, and launch
@@ -108,23 +116,36 @@ const Videography = () => {
       </Section>
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <SectionHeaderRow title="Selected films" action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>} />
+        <SectionHeaderRow
+          title="Selected films"
+          action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>}
+        />
         <ProjectGrid projects={videographyProjects} />
       </Section>
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Process clarity</h2>
             <FAQAccordion
               items={[
-                { question: 'Crew size', answer: 'We scale between a two person mobile unit and a full crew with G&E. We keep communication crisp either way.' },
-                { question: 'Revisions', answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.' },
-                { question: 'Sound & music', answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.' }
+                {
+                  question: 'Crew size',
+                  answer:
+                    'We scale between a two person mobile unit and a full crew with G&E. We keep communication crisp either way.'
+                },
+                {
+                  question: 'Revisions',
+                  answer: 'Two edit rounds are standard. We welcome early feedback to keep the cut aligned.'
+                },
+                {
+                  question: 'Sound & music',
+                  answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
+                }
               ]}
             />
           </div>
-          <div className="space-y-3">
+          <div className="space-y-3 min-w-0">
             <p className="text-[var(--muted)]">
               Ready for cameras to roll? Share your script, brief, or treatment. We will respond with crew, gear list, and a
               realistic schedule.
