@@ -50,7 +50,7 @@ const About = () => {
               </p>
 
               <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl text-[var(--text)] leading-tight">
-                We build visual systems > not one offs.
+                We build visual systems, not one offs.
               </h1>
 
               <p className="mt-4 text-[var(--muted)] max-w-2xl">
