@@ -164,7 +164,7 @@ const Home = () => {
     "MIF | Festival",
     "Soul:r | MC DRS",
     "Royal Exchange | Theatre",
-    "Trillden | Black Josh",
+    "Black Josh",
     "Children of Zeus",
     "Goldie",
     "Warehouse Project",
