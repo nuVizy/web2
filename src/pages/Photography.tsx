@@ -18,27 +18,21 @@ const Photography = () => {
   const featuredSeries = photographyProjects[0];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Section
         bleed
-        padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
+        padClassName="pt-20 pb-10 sm:pt-28 sm:pb-12 md:pt-36 md:pb-16"
         className="relative overflow-hidden ctx-grid"
       >
         <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
+          <div className="absolute inset-0 bg-black" />
           <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -top-20 -right-28 opacity-40">
-          </div>
+          <div className="absolute -top-20 -right-28 opacity-40" />
           <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
         </div>
+
         <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-10 items-end">
+          <div className="grid grid-cols-12 gap-8 lg:gap-10 items-end">
             <div className="col-span-12 lg:col-span-8">
               <SectionHeading
                 kicker="Photography"
@@ -51,9 +45,12 @@ const Photography = () => {
                       Portraits, campaigns, and still life studies built to feel deliberate. We balance light, posture, and
                       negative space for clarity.
                     </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-4">
-                      <Button to="/contact">Book a shoot</Button>
-                      <Button variant="ghost" to="/work">
+
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                      <Button className="w-full sm:w-auto" to="/contact">
+                        Book a shoot
+                      </Button>
+                      <Button className="w-full sm:w-auto" variant="ghost" to="/work">
                         View portfolio
                       </Button>
                     </div>
@@ -63,7 +60,7 @@ const Photography = () => {
             </div>
 
             <div className="col-span-12 lg:col-span-4">
-              <Card>
+              <Card className="w-full">
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Fast facts</p>
                 <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
                   <li>• Direction on set (poses, rhythm, pacing)</li>
@@ -90,7 +87,9 @@ const Photography = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
           <h2 className="font-mono text-2xl text-[var(--text)]">Featured series</h2>
-          <TextLink to="/work" className="min-h-[44px]">See all work</TextLink>
+          <TextLink to="/work" className="min-h-[44px]">
+            See all work
+          </TextLink>
         </div>
         <ProjectGrid projects={photographyProjects} />
       </Section>
@@ -112,14 +111,15 @@ const Photography = () => {
               ]}
             />
           </div>
-          <Card>
+
+          <Card className="w-full">
             <h3 className="font-mono text-xl text-[var(--text)] mb-3">Investment ranges</h3>
             <ul className="space-y-2 text-sm text-[var(--muted)]">
               <li>Studio portrait sessions: from €1.5k with lighting, direction, and selects.</li>
               <li>Location campaigns: €3k–€7k depending on crew, permits, and deliverables.</li>
               <li>Editorial stories: €2k–€5k with scouting, styling partners, and post.</li>
             </ul>
-            <Button className="mt-4" to="/contact">
+            <Button className="mt-4 w-full sm:w-auto" to="/contact">
               Request a quote
             </Button>
           </Card>
@@ -132,19 +132,35 @@ const Photography = () => {
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">FAQ</h2>
             <FAQAccordion
               items={[
-                { question: 'Turnaround times', answer: 'Portrait galleries deliver within 5 business days. Campaigns land within 10–14 days including retouch rounds.' },
-                { question: 'Deliverables', answer: 'We provide high resolution finals, web crops, and color and black and white options. Retouching notes are documented and versioned.' },
-                { question: 'Licensing', answer: 'Usage is tailored to your needs—press, digital, paid, or out of home. We keep it simple and transparent.' }
+                {
+                  question: 'Turnaround times',
+                  answer: 'Portrait galleries deliver within 5 business days. Campaigns land within 10–14 days including retouch rounds.'
+                },
+                {
+                  question: 'Deliverables',
+                  answer: 'We provide high resolution finals, web crops, and color and black and white options. Retouching notes are documented and versioned.'
+                },
+                {
+                  question: 'Licensing',
+                  answer: 'Usage is tailored to your needs—press, digital, paid, or out of home. We keep it simple and transparent.'
+                }
               ]}
             />
           </div>
-          <Card>
+
+          <Card className="w-full">
             <h3 className="font-mono text-xl text-[var(--text)]">Ready to shoot?</h3>
-            <p className="text-[var(--muted)] mt-2">Share your concept, reference images, or schedule. We respond within one business day.</p>
+            <p className="text-[var(--muted)] mt-2">
+              Share your concept, reference images, or schedule. We respond within one business day.
+            </p>
             <div className="mt-4">
-              <Button to="/contact">Start booking</Button>
+              <Button className="w-full sm:w-auto" to="/contact">
+                Start booking
+              </Button>
             </div>
-            <p className="text-sm text-[var(--muted)] mt-3">Prefer a call? Email studio@nuviz.studio and we’ll set a time.</p>
+            <p className="text-sm text-[var(--muted)] mt-3 break-all">
+              Prefer a call? Email studio@nuviz.studio and we’ll set a time.
+            </p>
           </Card>
         </div>
       </Section>

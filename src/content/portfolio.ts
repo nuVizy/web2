@@ -1,187 +1,159 @@
-export type ProjectCategory = 'Photography' | 'Videography' | 'Music Video' | 'Design';
+// src/content/portfolio.ts
 
-export interface Project {
+export type ProjectImage = {
+  src: string;
+  alt: string;
+};
+
+export type Project = {
   id: string;
   slug: string;
   title: string;
   year: number;
-  category: ProjectCategory;
+  category: string;
   role: string;
   description: string;
-  coverImage: { src: string; alt: string };
-  galleryImages: Array<{ src: string; alt: string }>;
+  coverImage: ProjectImage;
+  galleryImages: ProjectImage[];
   credits: string[];
   tags: string[];
   location?: string;
-}
-
-// Placeholder images sourced from Pexels (royalty-free placeholders)
-// Credit: https://www.pexels.com
-const baseUrl = 'https://images.pexels.com/photos';
+};
 
 export const photographyProjects: Project[] = [
   {
     id: 'photo-01',
     slug: 'lumen-portraits',
-    title: 'Lumen Portraits',
+    title: 'IAMDDB - Manchester.',
     year: 2024,
     category: 'Photography',
-    role: 'Lead Photographer',
-    description: 'Moody portrait set capturing quiet confidence with rim light and sculpted shadows.',
-    coverImage: { src: 'https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg', alt: 'Studio portrait of an artist with dramatic lighting' },
+    role: 'Concert Photographer',
+    description:
+      'Live festival/concert coverage in Manchester — stage energy, crowd atmosphere, and editorial moments from the IAMDDB performance.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855909/NVZ03412-2_ij8h5a.jpg',
+      alt: 'IAMDDB performing live in Manchester — concert photography'
+    },
     galleryImages: [
-      { src: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg', alt: 'Close portrait with soft falloff' },
-      { src: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg', alt: 'Profile view with rim light' },
-      { src: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg', alt: 'Hands adjusting lighting on set' }
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855997/NVZ02861_zkhurp.jpg', alt: 'IAMDDB live in Manchester — gallery image 01' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855872/NVZ03608_mzwrvi.jpg', alt: 'IAMDDB live in Manchester — gallery image 02' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855960/NVZ02784_jvixdg.jpg', alt: 'IAMDDB live in Manchester — gallery image 03' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855920/NVZ03823_zdgxg7.jpg', alt: 'IAMDDB live in Manchester — gallery image 04' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855983/NVZ02889_f78opw.jpg', alt: 'IAMDDB live in Manchester — gallery image 05' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855891/NVZ02711_anahsc.jpg', alt: 'IAMDDB live in Manchester — gallery image 06' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855892/NVZ03748_vdz5cw.jpg', alt: 'IAMDDB live in Manchester — gallery image 07' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855875/NVZ03131_hbgf5z.jpg', alt: 'IAMDDB live in Manchester — gallery image 08' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855939/NVZ03844_ajssci.jpg', alt: 'IAMDDB live in Manchester — gallery image 09' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855965/NVZ03904_x1scfo.jpg', alt: 'IAMDDB live in Manchester — gallery image 10' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855977/NVZ02864_llzyag.jpg', alt: 'IAMDDB live in Manchester — gallery image 11' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855864/NVZ02978_ahsszl.jpg', alt: 'IAMDDB live in Manchester — gallery image 12' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855918/NVZ02533_dvjrqn.jpg', alt: 'IAMDDB live in Manchester — gallery image 13' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855992/NVZ02727_c9lcfn.jpg', alt: 'IAMDDB live in Manchester — gallery image 14' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855973/NVZ03877_cvsexv.jpg', alt: 'IAMDDB live in Manchester — gallery image 15' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855895/NVZ02566_yzdfyb.jpg', alt: 'IAMDDB live in Manchester — gallery image 16' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855952/NVZ03822_l5epyc.jpg', alt: 'IAMDDB live in Manchester — gallery image 17' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855887/NVZ03314_qcdi04.jpg', alt: 'IAMDDB live in Manchester — gallery image 18' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855958/NVZ03341_ldlphi.jpg', alt: 'IAMDDB live in Manchester — gallery image 19' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855974/NVZ03949_xvkx1v.jpg', alt: 'IAMDDB live in Manchester — gallery image 20' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855969/NVZ03924_vyzpqa.jpg', alt: 'IAMDDB live in Manchester — gallery image 21' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855901/NVZ03305_we7jyp.jpg', alt: 'IAMDDB live in Manchester — gallery image 22' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855963/NVZ03865_buazt9.jpg', alt: 'IAMDDB live in Manchester — gallery image 23' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855921/NVZ02740_wqz6uu.jpg', alt: 'IAMDDB live in Manchester — gallery image 24' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855908/NVZ03267_mwf3ss.jpg', alt: 'IAMDDB live in Manchester — gallery image 25' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855976/NVZ03901_a8iebk.jpg', alt: 'IAMDDB live in Manchester — gallery image 26' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855878/NVZ03738_csf86o.jpg', alt: 'IAMDDB live in Manchester — gallery image 27' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855955/NVZ02746_f8mmgt.jpg', alt: 'IAMDDB live in Manchester — gallery image 28' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766856003/NVZ02881_ibmcs1.jpg', alt: 'IAMDDB live in Manchester — gallery image 29' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855958/NVZ03485-2_ffpkq6.jpg', alt: 'IAMDDB live in Manchester — gallery image 30' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855987/NVZ02647_jkb0cr.jpg', alt: 'IAMDDB live in Manchester — gallery image 31' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855935/NVZ03535_esovkv.jpg', alt: 'IAMDDB live in Manchester — gallery image 32' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855879/NVZ03751_ek6nen.jpg', alt: 'IAMDDB live in Manchester — gallery image 33' }
     ],
-    credits: ['Camera: Aria T.', 'Styling: Kemi Lowe', 'Retouch: nuViz team'],
-    tags: ['Portrait', 'Studio', 'Editorial'],
-    location: 'Brooklyn, NY'
+    credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
+    tags: ['Concert', 'Festival', 'Live Music', 'Manchester'],
+    location: 'Manchester, UK'
   },
+
   {
     id: 'photo-02',
-    slug: 'neon-nightwalk',
-    title: 'Neon Nightwalk',
-    year: 2023,
+    slug: 'neon-nightwalk', // keep slug the same
+    title: 'CASISDEAD - House Of Vans',
+    year: 2018,
     category: 'Photography',
-    role: 'Director of Photography',
-    description: 'Late-night city study with reflective glass, neon spill, and brisk pacing.',
-    coverImage: { src: 'https://images.pexels.com/photos/1068524/pexels-photo-1068524.jpeg', alt: 'Neon reflections in downtown street at night' },
+    role: 'Lead Photographer',
+    description:
+      'Event coverage at House of Vans for CASISDEAD — raw crowd energy, tight stage moments, and atmospheric details in low light.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857265/DSC07052_vs8m5g.jpg',
+      alt: 'CASISDEAD performing at House of Vans — event photography'
+    },
     galleryImages: [
-      { src: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg', alt: 'Silhouette against neon sign' },
-      { src: 'https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg', alt: 'Blurred traffic lights with long exposure' },
-      { src: 'https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg', alt: 'Street fashion portrait with neon' }
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855696/DSC05221_blfhrf.jpg', alt: 'CASISDEAD - House of Vans — gallery image 01' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855709/DSC09562_g3id0y.jpg', alt: 'CASISDEAD - House of Vans — gallery image 02' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855713/DSC09753_nxhjem.jpg', alt: 'CASISDEAD - House of Vans — gallery image 03' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855677/DSC09508_uakoga.jpg', alt: 'CASISDEAD - House of Vans — gallery image 04' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855690/DSC09844_o8p2ny.jpg', alt: 'CASISDEAD - House of Vans — gallery image 05' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855710/DSC09635_mk1izt.jpg', alt: 'CASISDEAD - House of Vans — gallery image 06' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855698/DSC09558_jhkpu0.jpg', alt: 'CASISDEAD - House of Vans — gallery image 07' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855690/DSC09756_hfdrts.jpg', alt: 'CASISDEAD - House of Vans — gallery image 08' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855674/DSC09766_ndz3x2.jpg', alt: 'CASISDEAD - House of Vans — gallery image 09' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855704/DSC09489_hc2mdw.jpg', alt: 'CASISDEAD - House of Vans — gallery image 10' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855654/DSC09766_uvtfdu.jpg', alt: 'CASISDEAD - House of Vans — gallery image 11' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855697/DSC09555_iwx5it.jpg', alt: 'CASISDEAD - House of Vans — gallery image 12' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855679/DSC09538_sc3vrg.jpg', alt: 'CASISDEAD - House of Vans — gallery image 13' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855717/DSC09797_xz9zyw.jpg', alt: 'CASISDEAD - House of Vans — gallery image 14' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855680/DSC09765_zlamkx.jpg', alt: 'CASISDEAD - House of Vans — gallery image 15' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855701/DSC09524_dbxymu.jpg', alt: 'CASISDEAD - House of Vans — gallery image 16' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855696/DSC05193_pq1yoj.jpg', alt: 'CASISDEAD - House of Vans — gallery image 17' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766855677/DSC09518_vk8kln.jpg', alt: 'CASISDEAD - House of Vans — gallery image 18' }
     ],
-    credits: ['Producer: Jonah W.', 'Color: nuViz Lab'],
-    tags: ['Street', 'Color', 'Night']
+    credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
+    tags: ['Event', 'Concert', 'Live Music', 'House of Vans'],
+    location: 'London, UK'
   },
+
   {
     id: 'photo-03',
-    slug: 'solstice-shores',
-    title: 'Solstice Shores',
-    year: 2022,
+    slug: 'solstice-shores', // keep slug the same
+    title: 'Kojay Radical',
+    year: 2017,
     category: 'Photography',
-    role: 'Photographer',
-    description: 'Coastal editorial exploring soft light, wind movement, and grounded posture.',
-    coverImage: { src: 'https://images.pexels.com/photos/175687/pexels-photo-175687.jpeg', alt: 'Model on rocky shoreline during golden hour' },
+    role: 'Lead Photographer',
+    description:
+      'Festival coverage for Manchester International Festival (MIF) — documenting Kojay Radical’s set with an editorial focus on atmosphere, crowd connection, and stage presence.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857265/DSC07052_vs8m5g.jpg',
+      alt: 'Kojay Radical at Manchester International Festival — event photography'
+    },
     galleryImages: [
-      { src: 'https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg', alt: 'Waves breaking behind subject' },
-      { src: 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg', alt: 'Minimal styling with coastal textures' }
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857285/DSC07641_mewn9g.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 01' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857281/DSC07454_jblrpm.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 02' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857278/DSC07259_o6oal5.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 03' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857281/DSC07019_thhget.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 04' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857274/DSC07277_wldrr1.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 05' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857281/DSC07495_pbf6iw.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 06' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857274/DSC07184_xx39ny.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 07' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857258/DSC07346_oufdki.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 08' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857260/DSC06811_bndr3d.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 09' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857256/DSC07068_o46gz9.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 10' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857254/DSC06778_cmjrzl.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 11' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857259/DSC06929_prid7u.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 12' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857267/DSC07050_cnrfg9.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 13' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857277/DSC06976_ani1ru.jpg', alt: 'Kojay Radical at MIF Manchester — gallery image 14' }
     ],
-    credits: ['Stylist: Lo Rivera', 'HMU: Dae Song'],
-    tags: ['Editorial', 'Landscape', 'Motion'],
-    location: 'Big Sur, CA'
+    credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
+    tags: ['Event', 'Festival', 'Live Music', 'MIF', 'Manchester'],
+    location: 'Manchester, UK'
   }
 ];
 
-export const videographyProjects: Project[] = [
-  {
-    id: 'video-01',
-    slug: 'halcyon-brand-film',
-    title: 'Halcyon Brand Film',
-    year: 2024,
-    category: 'Videography',
-    role: 'Director & DP',
-    description: 'Quiet brand film stitched from morning rituals and tactile product shots.',
-    coverImage: { src: 'https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg', alt: 'Still from brand film featuring sunrise through window' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg', alt: 'Pour-over coffee slow motion' },
-      { src: 'https://images.pexels.com/photos/1025467/pexels-photo-1025467.jpeg', alt: 'Hands touching linen fabric' },
-      { src: 'https://images.pexels.com/photos/545013/pexels-photo-545013.jpeg', alt: 'Wide shot of minimalist living room' }
-    ],
-    credits: ['Producer: Nia Park', 'Editor: nuViz Studio', 'Color: NVS Grade'],
-    tags: ['Brand Film', 'Lifestyle', 'Color Grade'],
-    location: 'Los Angeles, CA'
-  },
-  {
-    id: 'video-02',
-    slug: 'pulse-event-recap',
-    title: 'Pulse Event Recap',
-    year: 2023,
-    category: 'Videography',
-    role: 'Director',
-    description: 'High-energy event film with handheld texture, layered audio, and quick punch edits.',
-    coverImage: { src: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg', alt: 'Crowd cheering at live event' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg', alt: 'Performer on stage with lights' },
-      { src: 'https://images.pexels.com/photos/1190296/pexels-photo-1190296.jpeg', alt: 'Audience reaction shot' }
-    ],
-    credits: ['1st AC: Lee Martin', 'Sound: Paloma Reyes'],
-    tags: ['Event', 'Recap', 'Energy']
-  }
-];
+// These exports prevent import errors from other pages
+export const videographyProjects: Project[] = [];
+export const musicVideoProjects: Project[] = [];
+export const designProjects: Project[] = [];
 
-export const musicVideoProjects: Project[] = [
-  {
-    id: 'mv-01',
-    slug: 'midnight-parade',
-    title: 'Midnight Parade',
-    year: 2024,
-    category: 'Music Video',
-    role: 'Creative Director',
-    description: 'Performance-driven music video blending kinetic camera moves with painterly lighting.',
-    coverImage: { src: 'https://images.pexels.com/photos/1670920/pexels-photo-1670920.jpeg', alt: 'Artist performing under blue stage light' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/164879/pexels-photo-164879.jpeg', alt: 'Behind the scenes lighting grid' },
-      { src: 'https://images.pexels.com/photos/176307/pexels-photo-176307.jpeg', alt: 'Choreography moment with spotlight' },
-      { src: 'https://images.pexels.com/photos/187349/pexels-photo-187349.jpeg', alt: 'Singer close-up with prism effect' }
-    ],
-    credits: ['Artist: LUNE', 'Choreography: The Grid', 'Editor: nuViz Post'],
-    tags: ['Performance', 'Color', 'Motion']
-  },
-  {
-    id: 'mv-02',
-    slug: 'emberlines',
-    title: 'Emberlines',
-    year: 2022,
-    category: 'Music Video',
-    role: 'Director & DP',
-    description: 'Narrative-driven piece with analog-inspired textures and grounded character work.',
-    coverImage: { src: 'https://images.pexels.com/photos/854648/pexels-photo-854648.jpeg', alt: 'Two characters framed in warm backlight' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg', alt: 'Actor walking through foggy forest' },
-      { src: 'https://images.pexels.com/photos/2310644/pexels-photo-2310644.jpeg', alt: 'Gaffer adjusting tungsten practicals' }
-    ],
-    credits: ['Producer: Quinn Ford', 'Color: Amber Lab'],
-    tags: ['Narrative', 'Analog', 'Story']
-  }
-];
-
-export const designProjects: Project[] = [
-  {
-    id: 'design-01',
-    slug: 'pulse-identity',
-    title: 'Pulse Identity',
-    year: 2024,
-    category: 'Design',
-    role: 'Art Director',
-    description: 'Identity suite for an audio collective—monoline logotype, kinetic lines, vinyl-ready sleeves.',
-    coverImage: { src: 'https://images.pexels.com/photos/210/pexels-photo.jpg', alt: 'Brand identity mockups with bold typography' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/277455/pexels-photo-277455.jpeg', alt: 'Business cards and logotype' },
-      { src: 'https://images.pexels.com/photos/1769/pexels-photo.jpg', alt: 'Vinyl sleeve artwork with vibrant gradients' }
-    ],
-    credits: ['Design: nuViz Studio', 'Illustration: Ara M.'],
-    tags: ['Branding', 'Print', 'Music']
-  },
-  {
-    id: 'design-02',
-    slug: 'signal-posters',
-    title: 'Signal Posters',
-    year: 2023,
-    category: 'Design',
-    role: 'Designer',
-    description: 'Poster series for an avant festival—tight grids, metallic inks, deliberate negative space.',
-    coverImage: { src: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg', alt: 'Poster wall with bold graphic design' },
-    galleryImages: [
-      { src: 'https://images.pexels.com/photos/210/pexels-photo.jpg', alt: 'Close up of metallic ink poster' },
-      { src: 'https://images.pexels.com/photos/277455/pexels-photo-277455.jpeg', alt: 'Series of posters aligned on wall' }
-    ],
-    credits: ['Art Direction: nuViz Studio'],
-    tags: ['Poster', 'Typography', 'Print'],
-    location: 'Toronto, CA'
-  }
-];
+// Aliases (in case your pages use slightly different names)
+export const musicVideosProjects = musicVideoProjects;
 
 export const allProjects: Project[] = [
   ...photographyProjects,
@@ -189,3 +161,7 @@ export const allProjects: Project[] = [
   ...musicVideoProjects,
   ...designProjects
 ];
+
+export function getProjectBySlug(slug: string) {
+  return allProjects.find((p) => p.slug === slug);
+}
