@@ -64,9 +64,9 @@ const Home = () => {
             decoding="async"
           />
           {/* Darker overlay for legibility */}
-          <div className="absolute inset-0 bg-black/65" />
+          <div className="absolute inset-0 bg-black/85" />
           {/* Depth gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 to-black/95" />
         </div>
 
         {/* Pinned to bottom */}
