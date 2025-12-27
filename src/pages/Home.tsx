@@ -72,7 +72,7 @@ const Home = () => {
         {/* Pinned to bottom */}
         <Container size="lg" className="relative mt-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
-            <header className="col-span-12 lg:col-span-7 min-w-0">
+            <header className="col-span-12 lg:col-span-8 min-w-0">
               <p
                 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
                 data-prefix="//"
@@ -101,42 +101,6 @@ const Home = () => {
                 </Button>
               </div>
             </header>
-
-            <aside className="col-span-12 lg:col-span-5 min-w-0">
-              <Card>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Index</p>
-                    <p className="font-mono text-xl text-[var(--text)] mt-1">Four modules, one system.</p>
-                  </div>
-                </div>
-
-                <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
-                  {[
-                    { label: "Photography", to: "/photography" },
-                    { label: "Videography", to: "/videography" },
-                    { label: "Music Videos", to: "/music-videos" },
-                    { label: "Design", to: "/design" },
-                  ].map((item) => (
-                    <TextLink key={item.to} to={item.to} className="justify-between w-full min-h-[44px]">
-                      <span className="text-[var(--text)]">{item.label}</span>
-                      <span className="text-[var(--muted)]">↗</span>
-                    </TextLink>
-                  ))}
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-                  <Card tone="outline" pad="sm">
-                    <div className="font-mono text-[var(--text)]">Small crews</div>
-                    <div className="text-[var(--muted)] mt-1">Decisive direction, calm sets.</div>
-                  </Card>
-                  <Card tone="outline" pad="sm">
-                    <div className="font-mono text-[var(--text)]">System outputs</div>
-                    <div className="text-[var(--muted)] mt-1">Frames, cuts, layouts — aligned.</div>
-                  </Card>
-                </div>
-              </Card>
-            </aside>
           </div>
         </Container>
       </Section>
