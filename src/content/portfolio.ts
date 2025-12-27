@@ -77,7 +77,7 @@ export const photographyProjects: Project[] = [
   {
     id: 'photo-02',
     slug: 'neon-nightwalk', // keep slug the same
-    title: 'CASISDEAD - House Of Vans',
+    title: 'CASISDEAD - House Of Vans.',
     year: 2018,
     category: 'Photography',
     role: 'Lead Photographer',
@@ -115,7 +115,7 @@ export const photographyProjects: Project[] = [
   {
     id: 'photo-03',
     slug: 'solstice-shores', // keep slug the same
-    title: 'Kojay Radical - MIF International',
+    title: 'Kojay Radical - Manchester International Festival',
     year: 2017,
     category: 'Photography',
     role: 'Lead Photographer',
