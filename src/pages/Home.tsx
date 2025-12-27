@@ -85,12 +85,13 @@ const Home = () => {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-black/15" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/25 to-black/35" />
+          {/* Dark overlays for legibility */}
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/25 to-black/45" />
         </div>
 
         {/* Pinned to bottom */}
-        <Container size="lg" className="relative mt-auto">
+        <Container size="lg" className="relative mt-auto w-full">
           <div className="grid grid-cols-12 gap-8 items-end">
             <header className="col-span-12 lg:col-span-8 min-w-0">
               <p
@@ -180,6 +181,35 @@ const Home = () => {
         />
 
         <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
+          {/* Self-contained marquee CSS so it always works */}
+          <style>{`
+            @keyframes nuviz-marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+
+            .nuviz-marquee { overflow: hidden; }
+            .nuviz-marquee__track {
+              display: flex;
+              flex-wrap: nowrap;
+              align-items: center;
+              width: max-content;
+              white-space: nowrap;
+              animation: nuviz-marquee var(--nuviz-marquee-duration, 34s) linear infinite;
+              will-change: transform;
+            }
+
+            .nuviz-marquee:hover .nuviz-marquee__track,
+            .nuviz-marquee:focus-within .nuviz-marquee__track {
+              animation-play-state: paused;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .nuviz-marquee { overflow-x: auto; }
+              .nuviz-marquee__track { animation: none; transform: none; }
+            }
+          `}</style>
+
           <div className="flex items-center justify-between gap-4 px-4 py-3 border-b border-[var(--accent-dim)]">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
               <span className="text-[var(--accent-green)]">//</span> Selected credits
@@ -187,38 +217,37 @@ const Home = () => {
             <p className="font-mono text-xs text-[var(--muted)]">Ticker</p>
           </div>
 
-          {/* Screen reader friendly, non-duplicated list */}
+          {/* Screen reader friendly list (NOT duplicated) */}
           <ul className="sr-only">
             {CREDITS.map((name) => (
               <li key={name}>{name}</li>
             ))}
           </ul>
 
-          {/* Marquee */}
           <div
             className="nuviz-marquee relative"
-            style={{ ["--nuviz-marquee-duration" as any]: "30s" }}
-            aria-label="Selected credits ticker. Hover to pause."
+            style={{ ["--nuviz-marquee-duration" as any]: "34s" }}
+            aria-label="Selected credits ticker. Hover or focus to pause."
           >
             {/* edge fades */}
             <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-[var(--panel)] to-transparent" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 bg-gradient-to-l from-[var(--panel)] to-transparent" />
 
-            {/* duplicate the content for seamless looping */}
             <div className="nuviz-marquee__track gap-6 px-4 py-4" aria-hidden="true">
               {[...CREDITS, ...CREDITS].map((name, i) => (
-                <span
-                  key={`${name}-${i}`}
-                  className="inline-flex items-center gap-3 whitespace-nowrap text-sm text-[var(--muted)]"
-                >
+                <span key={`${name}-${i}`} className="inline-flex items-center gap-3">
                   <span className="font-mono text-[var(--accent-green)] opacity-70">&gt;</span>
-                  <span className="hover:text-[var(--text)] transition-colors">{name}</span>
+                  <span className="text-sm text-[var(--muted)] hover:text-[var(--text)] transition-colors">
+                    {name}
+                  </span>
                   <span className="font-mono text-[var(--accent-dim)] opacity-50">/</span>
                 </span>
               ))}
             </div>
           </div>
         </div>
+
+        <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
 
       {/* Work / Approach */}
@@ -232,6 +261,7 @@ const Home = () => {
               </div>
               <TextLink to="/work">Browse the archive</TextLink>
             </div>
+
             <ProjectGrid projects={allProjects.slice(0, 6)} />
           </div>
 
@@ -297,18 +327,15 @@ const Home = () => {
             items={[
               {
                 question: "Where are you based?",
-                answer:
-                  "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
+                answer: "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
               },
               {
                 question: "What kinds of clients do you work with?",
-                answer:
-                  "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
+                answer: "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
               },
               {
                 question: "What’s the usual process?",
-                answer:
-                  "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
+                answer: "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
               },
               { question: "How fast do you reply?", answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline." },
             ]}
