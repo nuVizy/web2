@@ -47,7 +47,6 @@ const Home = () => {
           "Graphic design",
           "Visual identity systems",
         ]}
-        // sameAs={["https://instagram.com/...", "https://vimeo.com/..."]}
       />
 
       {/* Hero (full screen desktop + mobile) */}
@@ -70,7 +69,8 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/75" />
         </div>
 
-        <Container size="lg" className="relative">
+        {/* Pinned to bottom */}
+        <Container size="lg" className="relative mt-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
             <header className="col-span-12 lg:col-span-7 min-w-0">
               <p
@@ -171,22 +171,10 @@ const Home = () => {
         <div className="mt-8">
           <ServicesStrip
             services={[
-              {
-                title: "Photography",
-                detail: "Editorial portraits, brand stills and campaigns with controlled negative space.",
-              },
-              {
-                title: "Film",
-                detail: "Brand films and documentary sequences built around pacing, light and sound.",
-              },
-              {
-                title: "Music Videos",
-                detail: "Performance led direction with cinematic cut — designed for rhythm, not trends.",
-              },
-              {
-                title: "Design",
-                detail: "Identity systems, artwork and layouts that stay calm under visual pressure.",
-              },
+              { title: "Photography", detail: "Editorial portraits, brand stills and campaigns with controlled negative space." },
+              { title: "Film", detail: "Brand films and documentary sequences built around pacing, light and sound." },
+              { title: "Music Videos", detail: "Performance led direction with cinematic cut — designed for rhythm, not trends." },
+              { title: "Design", detail: "Identity systems, artwork and layouts that stay calm under visual pressure." },
             ]}
           />
         </div>
@@ -266,21 +254,10 @@ const Home = () => {
         <div className="mt-8">
           <ProcessTimeline
             steps={[
-              {
-                title: "Discovery",
-                description:
-                  "References, constraints, success criteria — and a single sentence that anchors the work.",
-              },
-              {
-                title: "System design",
-                description:
-                  "Tone, palette, pacing, typography, lighting language — documented and agreed.",
-              },
+              { title: "Discovery", description: "References, constraints, success criteria — and a single sentence that anchors the work." },
+              { title: "System design", description: "Tone, palette, pacing, typography, lighting language — documented and agreed." },
               { title: "Production", description: "Small crew, decisive direction, clean coverage." },
-              {
-                title: "Post & delivery",
-                description: "Cut, grade, layouts and exports packaged for every platform you need.",
-              },
+              { title: "Post & delivery", description: "Cut, grade, layouts and exports packaged for every platform you need." },
             ]}
           />
         </div>
@@ -312,23 +289,17 @@ const Home = () => {
             items={[
               {
                 question: "Where are you based?",
-                answer:
-                  "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
+                answer: "nuViz is based in Paphos, Cyprus — originally built in the UK. We work locally and travel for the right project.",
               },
               {
                 question: "What kinds of clients do you work with?",
-                answer:
-                  "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
+                answer: "Artists, labels, theatres, studios and brands that want a distinct visual language — high level, alternative, not generic.",
               },
               {
                 question: "What’s the usual process?",
-                answer:
-                  "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
+                answer: "A short discovery call, a clear direction, then production and delivery. You get a focused system, not 200 random options.",
               },
-              {
-                question: "How fast do you reply?",
-                answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline.",
-              },
+              { question: "How fast do you reply?", answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline." },
             ]}
           />
         </div>
@@ -340,8 +311,7 @@ const Home = () => {
           <div className="min-w-0">
             <h2 className="font-mono text-xl text-[var(--text)]">Start with a reference and an intention.</h2>
             <p className="text-[var(--muted)] mt-2 max-w-2xl">
-              Send links, mood, constraints, and the outcome you need. We respond within one business day with a proposed
-              direction, structure, and timeline.
+              Send links, mood, constraints, and the outcome you need. We respond within one business day with a proposed direction, structure, and timeline.
             </p>
           </div>
           <div className="md:mt-0 flex items-center gap-3">
