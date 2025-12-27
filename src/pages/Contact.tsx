@@ -64,9 +64,6 @@ const Contact = () => {
                 <Button className="w-full sm:w-auto" variant="ghost" to="/work">
                   View work
                 </Button>
-                <TextLink to="/about" className="min-h-[44px]">
-                  Read the studio story
-                </TextLink>
               </div>
             </div>
           </div>
