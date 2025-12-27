@@ -25,11 +25,18 @@ const Footer = () => {
               Crafted visuals with rhythm, patience, and sharp intuition.
             </p>
 
-            {/* Meta line (uniform) */}
-            <div className="pt-2 grid grid-cols-3 gap-2 text-xs text-[var(--muted)] max-w-md">
-              <span className="text-center">Paphos, Cyprus</span>
-              <span className="text-center">UK roots</span>
-              <span className="text-center">EU/UK</span>
+            {/* Meta box */}
+            <div className="pt-2">
+              <div className="inline-block border border-[var(--accent-dim)] bg-black/10 px-3 py-2">
+                <div className="grid grid-cols-3 gap-4 text-xs text-[var(--muted)]">
+                  {["Paphos, Cyprus", "UK roots", "EU/UK"].map((item) => (
+                    <div key={item} className="flex items-center justify-center gap-2 whitespace-nowrap">
+                      <span className="font-mono text-[var(--accent-green)]">&gt;</span>
+                      <span className="text-center">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
