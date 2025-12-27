@@ -36,7 +36,7 @@ const MusicVideos = () => {
             decoding="async"
           />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/85" />
         </div>
 
         {/* Text + CTAs pinned to bottom */}
