@@ -151,42 +151,59 @@ const Home = () => {
         secondaryCta={{ label: "See work", to: "/work" }}
       />
 
-      {/* Selected collaborators */}
-      <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
-        <SectionHeading
-          kicker="Selected collaborators"
-          title="Work that lives in culture facing rooms."
-          description="Clients + Collaborations"
-        />
+      {/* Selected collaborators / credits */}
+<div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
+  <div className="flex items-center justify-between gap-4 px-4 py-3 border-b border-[var(--accent-dim)]">
+    <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
+      <span className="text-[var(--accent-green)]">//</span> Selected credits
+    </p>
+    <p className="font-mono text-xs text-[var(--muted)]">Index</p>
+  </div>
 
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-  {[
-    "MIF",
-    "MC DRS",
-    "Royal Exchange Theatre",
-    "Black Josh",
-    "Children of Zeus",
-    "Goldie",
-    "Warehouse Project",
-    "Hit + Run",
-    "Shotty Horror",
-    "Killa P",
-    "Chimpo",
-    "Levelz",
-    "V Festival",
-    "Parklife Festival",
-    "Nick Shahlavi",
-    "Space Cadet",
-    "DJ EZ",
-    "Bicep",
-    "Bugsy Malone",
-    "SL",
-  ].map((name) => (
-    <Card key={name} tone="outline" pad="sm" className="text-sm text-[var(--muted)]">
-      {name}
-    </Card>
-  ))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    {[
+      "MIF | Festival",
+      "Soul:r | MC DRS",
+      "Royal Exchange | Theatre",
+      "Trillden | Black Josh",
+      "Children of Zeus",
+      "Goldie",
+      "Warehouse Project",
+      "Hit + Run",
+      "Shotty Horror",
+      "Sangy",
+      "Killa P",
+      "Chimpo",
+      "Levelz",
+      "V Festival",
+      "Parklife Festival",
+      "Nick Shahlavi",
+      "Space Cadet",
+      "DJ EZ",
+      "Bicep",
+      "Bugsy Malone",
+      "SL",
+    ].map((name) => (
+      <div
+        key={name}
+        className="group flex items-center justify-between gap-4 px-4 py-3 border-t border-[var(--accent-dim)] min-w-0"
+      >
+        <div className="flex items-center gap-3 min-w-0">
+          <span className="font-mono text-[var(--accent-green)] opacity-70 group-hover:opacity-100">
+            &gt;
+          </span>
+          <span className="text-sm text-[var(--muted)] truncate group-hover:text-[var(--text)]">
+            {name}
+          </span>
+        </div>
+        <span className="font-mono text-xs text-[var(--muted)] opacity-60 group-hover:opacity-100">
+          ↗
+        </span>
+      </div>
+    ))}
+  </div>
 </div>
+
 
         <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
