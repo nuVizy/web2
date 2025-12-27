@@ -1,4 +1,3 @@
-import AbstractArt from '../components/ui/AbstractArt';
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
@@ -18,19 +17,32 @@ const Design = () => {
   });
 
   return (
-    <div>
-      <Section bleed padClassName="pt-28 pb-12 md:pt-36 md:pb-16" className="relative overflow-hidden ctx-grid">
+    <div className="w-full max-w-[100vw] overflow-x-hidden">
+      {/* HERO (full screen image) */}
+      <Section
+        bleed
+        padClassName="pt-24 pb-12 sm:pt-28 md:pt-36 md:pb-16"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
+      >
+        {/* Background image + overlay */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -bottom-28 -left-28 opacity-40">
-            <AbstractArt className="h-[560px] w-[760px]" variant="soft" />
-          </div>
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
+          <img
+            src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+          {/* slight dark overlay */}
+          <div className="absolute inset-0 bg-black/45" />
+          {/* subtle depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" />
         </div>
 
-        <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-10 items-end">
-            <div className="col-span-12 lg:col-span-8">
+        <Container size="lg" className="relative w-full mt-auto">
+          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
+            <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
                 kicker="Design"
                 title="Identity and artwork with intent"
@@ -40,9 +52,11 @@ const Design = () => {
                       Brand systems, posters, album covers, and social kits that translate across formats. Grid first, with
                       cinematic restraint.
                     </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-4">
-                      <Button to="/contact">Start a brief</Button>
-                      <Button variant="ghost" to="/work">
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                      <Button className="w-full sm:w-auto" to="/contact">
+                        Start a brief
+                      </Button>
+                      <Button className="w-full sm:w-auto" variant="ghost" to="/work">
                         See portfolio
                       </Button>
                     </div>
@@ -51,8 +65,8 @@ const Design = () => {
               />
             </div>
 
-            <div className="col-span-12 lg:col-span-4">
-              <Card pad="lg">
+            <div className="col-span-12 lg:col-span-4 min-w-0">
+              <Card pad="lg" className="w-full">
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Outputs</p>
                 <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
                   <li>• Logo suite + type system</li>
@@ -67,7 +81,7 @@ const Design = () => {
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-start">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-2">What we deliver</h2>
             <ul className="list-disc list-inside text-sm text-[var(--muted)] space-y-2">
               <li>Identity systems and logo suites.</li>
@@ -80,26 +94,14 @@ const Design = () => {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 min-w-0">
             {[
-              {
-                title: 'Brand identity',
-                text: 'Naming support, visual language, and brand manuals for launch ready teams.'
-              },
-              {
-                title: 'Posters & key art',
-                text: 'Layered compositions for tours and shows with print production guidance.'
-              },
-              {
-                title: 'Social systems',
-                text: 'Reusable templates for reels, carousels, and diaries built for speed.'
-              },
-              {
-                title: 'Album visuals',
-                text: 'Cover art, inner sleeves, stickers, and motion snippets aligned to your sonic palette.'
-              }
+              { title: 'Brand identity', text: 'Naming support, visual language, and brand manuals for launch ready teams.' },
+              { title: 'Posters & key art', text: 'Layered compositions for tours and shows with print production guidance.' },
+              { title: 'Social systems', text: 'Reusable templates for reels, carousels, and diaries built for speed.' },
+              { title: 'Album visuals', text: 'Cover art, inner sleeves, stickers, and motion snippets aligned to your sonic palette.' }
             ].map((item) => (
-              <Card key={item.title}>
+              <Card key={item.title} className="min-w-0">
                 <h3 className="font-mono text-lg text-[var(--text)] mb-2">{item.title}</h3>
                 <p className="text-sm text-[var(--muted)]">{item.text}</p>
               </Card>
@@ -115,7 +117,7 @@ const Design = () => {
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Mini case notes</h2>
             <div className="space-y-3 text-sm text-[var(--muted)]">
               <Card pad="sm">
@@ -129,7 +131,7 @@ const Design = () => {
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-3 min-w-0">
             <p className="text-[var(--muted)]">
               Need a deck or rollout plan? We can align on deliverables in a 20 minute call and outline a clear schedule.
             </p>
