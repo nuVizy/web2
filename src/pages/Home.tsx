@@ -214,7 +214,6 @@ const Home = () => {
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
               <span className="text-[var(--accent-green)]">//</span> Selected credits
             </p>
-            <p className="font-mono text-xs text-[var(--muted)]">Ticker</p>
           </div>
 
           {/* Screen reader friendly list (NOT duplicated) */}
