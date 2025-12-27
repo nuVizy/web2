@@ -39,26 +39,27 @@ const MusicVideos = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
         </div>
 
-        {/* Push content to bottom */}
+        {/* Content pinned to bottom */}
         <Container size="lg" className="relative w-full mt-auto">
           <div className="max-w-3xl min-w-0">
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-white/70">Music Videos</p>
-
-            <h1 className="mt-3 font-serif text-4xl md:text-5xl text-white">
-              Visual rhythm that honors the track
-            </h1>
-
-            <p className="mt-4 text-base md:text-lg text-white/80">
-              We design shotlists, choreography, and lighting around the beat. Expect intentional pacing, performance
-              guidance, and edits that hit on the one.
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
-              <Button to="/contact">Book a video</Button>
-              <Button variant="ghost" to="/videography">
-                See brand films
-              </Button>
-            </div>
+            <SectionHeading
+              kicker="Music Videos"
+              title="Visual rhythm that honors the track"
+              description={
+                <>
+                  <p>
+                    We design shotlists, choreography, and lighting around the beat. Expect intentional pacing, performance
+                    guidance, and edits that hit on the one.
+                  </p>
+                  <div className="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
+                    <Button to="/contact">Book a video</Button>
+                    <Button variant="ghost" to="/videography">
+                      See brand films
+                    </Button>
+                  </div>
+                </>
+              }
+            />
           </div>
         </Container>
       </Section>
