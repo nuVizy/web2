@@ -35,47 +35,29 @@ const MusicVideos = () => {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45" />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
         </div>
 
-        <Container size="lg" className="relative w-full flex flex-col flex-1">
-          {/* TOP: intro text */}
-          <div className="min-w-0">
-            <SectionHeading
-              kicker="Music Videos"
-              title="Visual rhythm that honors the track"
-              description={
-                <p>
-                  We design shotlists, choreography, and lighting around the beat. Expect intentional pacing, performance
-                  guidance, and edits that hit on the one.
-                </p>
-              }
-            />
-          </div>
+        {/* Push content to bottom */}
+        <Container size="lg" className="relative w-full mt-auto">
+          <div className="max-w-3xl min-w-0">
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-white/70">Music Videos</p>
 
-          {/* BOTTOM: CTA + On the day */}
-          <div className="mt-auto">
-            <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
-              <div className="col-span-12 lg:col-span-8 min-w-0">
-                <div className="flex flex-wrap items-center gap-3 md:gap-4">
-                  <Button to="/contact">Book a video</Button>
-                  <Button variant="ghost" to="/videography">
-                    See brand films
-                  </Button>
-                </div>
-              </div>
+            <h1 className="mt-3 font-serif text-4xl md:text-5xl text-white">
+              Visual rhythm that honors the track
+            </h1>
 
-              <div className="col-span-12 lg:col-span-4 min-w-0">
-                <Card pad="lg">
-                  <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">On the day</p>
-                  <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                    <li>• Performance direction + blocking</li>
-                    <li>• Lighting plan that matches the mix</li>
-                    <li>• Crew scaled to budget (lean → full)</li>
-                  </ul>
-                </Card>
-              </div>
+            <p className="mt-4 text-base md:text-lg text-white/80">
+              We design shotlists, choreography, and lighting around the beat. Expect intentional pacing, performance
+              guidance, and edits that hit on the one.
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
+              <Button to="/contact">Book a video</Button>
+              <Button variant="ghost" to="/videography">
+                See brand films
+              </Button>
             </div>
           </div>
         </Container>
