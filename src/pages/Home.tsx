@@ -161,9 +161,9 @@ const Home = () => {
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
   {[
-    "MIF | Festival",
-    "Soul:r | MC DRS",
-    "Royal Exchange | Theatre",
+    "MIF",
+    "MC DRS",
+    "Royal Exchange Theatre",
     "Black Josh",
     "Children of Zeus",
     "Goldie",
