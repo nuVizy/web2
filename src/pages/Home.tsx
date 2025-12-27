@@ -229,7 +229,7 @@ const Home = () => {
         <SectionHeading
           kicker="Notes"
           title="What clients tend to say"
-          description="Replace these placeholders with real quotes as you collect them — the structure is ready."
+          description="A selection of clients"
         />
         <div className="mt-8">
           <TestimonialBlock
