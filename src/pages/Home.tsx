@@ -160,12 +160,34 @@ const Home = () => {
         />
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-          {["MIF | Festival", "Soul:r | MC DRS", "Royal Exchange | Theatre", "Trillden | Black Josh"].map((name) => (
-            <Card key={name} tone="outline" pad="sm" className="text-sm text-[var(--muted)]">
-              {name}
-            </Card>
-          ))}
-        </div>
+  {[
+    "MIF | Festival",
+    "Soul:r | MC DRS",
+    "Royal Exchange | Theatre",
+    "Trillden | Black Josh",
+    "Children of Zeus",
+    "Goldie",
+    "Warehouse Project",
+    "Hit + Run",
+    "Shotty Horror",
+    "Sangy",
+    "Killa P",
+    "Chimpo",
+    "Levelz",
+    "V Festival",
+    "Parklife Festival",
+    "Nick Shahlavi",
+    "Space Cadet",
+    "DJ EZ",
+    "Bicep",
+    "Bugsy Malone",
+    "SL",
+  ].map((name) => (
+    <Card key={name} tone="outline" pad="sm" className="text-sm text-[var(--muted)]">
+      {name}
+    </Card>
+  ))}
+</div>
 
         <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
