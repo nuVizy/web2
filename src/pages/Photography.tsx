@@ -39,35 +39,29 @@ const Photography = () => {
         <ProjectGrid projects={photographyProjects} />
       </Section>
 
+      {/* SERVICES (full-width now) */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <div className="grid gap-8 lg:grid-cols-2 items-start">
-          <div>
-            <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Services & guidance</h2>
-            <p className="text-[var(--muted)] mb-4">
-              We design shoots around clear tone and pacing. Expect pre production support, on set direction, and considered
-              retouching.
-            </p>
-            <ServicesStrip
-              services={[
-                { title: 'Portraits', detail: 'Artist press kits, album liners, director portraits, executive presence.' },
-                { title: 'Campaigns', detail: 'Lookbooks, launch visuals, and hero imagery for product lines.' },
-                { title: 'Editorial stories', detail: 'Magazine ready narratives shot on location or in studio.' },
-                { title: 'Product and still life', detail: 'Tabletop sets, macro detail, and texture forward lighting.' }
-              ]}
-            />
-          </div>
+        <div className="max-w-3xl">
+          <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Services & guidance</h2>
+          <p className="text-[var(--muted)] mb-6">
+            We design shoots around clear tone and pacing. Expect pre production support, on set direction, and considered
+            retouching.
+          </p>
+        </div>
 
-          <Card className="w-full">
-            <h3 className="font-mono text-xl text-[var(--text)] mb-3">Investment ranges</h3>
-            <ul className="space-y-2 text-sm text-[var(--muted)]">
-              <li>Studio portrait sessions: from €1.5k with lighting, direction, and selects.</li>
-              <li>Location campaigns: €3k–€7k depending on crew, permits, and deliverables.</li>
-              <li>Editorial stories: €2k–€5k with scouting, styling partners, and post.</li>
-            </ul>
-            <Button className="mt-4 w-full sm:w-auto" to="/contact">
-              Request a quote
-            </Button>
-          </Card>
+        <ServicesStrip
+          services={[
+            { title: 'Portraits', detail: 'Artist press kits, album liners, director portraits, executive presence.' },
+            { title: 'Campaigns', detail: 'Lookbooks, launch visuals, and hero imagery for product lines.' },
+            { title: 'Editorial stories', detail: 'Magazine ready narratives shot on location or in studio.' },
+            { title: 'Product and still life', detail: 'Tabletop sets, macro detail, and texture forward lighting.' }
+          ]}
+        />
+
+        <div className="mt-8">
+          <Button className="w-full sm:w-auto" to="/contact">
+            Request a quote
+          </Button>
         </div>
       </Section>
 
@@ -83,7 +77,8 @@ const Photography = () => {
                 },
                 {
                   question: 'Deliverables',
-                  answer: 'We provide high resolution finals, web crops, and color and black and white options. Retouching notes are documented and versioned.'
+                  answer:
+                    'We provide high resolution finals, web crops, and color and black and white options. Retouching notes are documented and versioned.'
                 },
                 {
                   question: 'Licensing',
