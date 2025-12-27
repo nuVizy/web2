@@ -212,7 +212,7 @@ const Home = () => {
 
           <div className="flex items-center justify-between gap-4 px-4 py-3 border-b border-[var(--accent-dim)]">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
-              <span className="text-[var(--accent-green)]">></span> Selected credits
+              <span className="text-[var(--accent-green)]">//</span> Selected credits
             </p>
           </div>
 
