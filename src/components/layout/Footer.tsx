@@ -13,8 +13,8 @@ const Footer = () => {
         <div className="grid gap-6 md:grid-cols-12 items-start">
           {/* Brand / statement (condensed) */}
           <div className="md:col-span-7 space-y-2 min-w-0">
-            <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]" aria-label="nuViz Studio">
-              <span className="text-[var(--accent-green)]">//</span> nuViz Studio
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
+              <span className="font-mono text-[var(--accent-green)]">&gt;</span> nuViz Studio
             </p>
 
             <p className="font-mono text-lg sm:text-xl leading-snug text-[var(--accent-green)]">
@@ -22,23 +22,13 @@ const Footer = () => {
             </p>
 
             <p className="text-sm text-[var(--muted)] max-w-[62ch]">
-              <span className="font-mono text-[var(--accent-green)]">&gt;</span>{" "}
               Crafted visuals with rhythm, patience, and sharp intuition.
             </p>
 
             <div className="pt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--muted)]">
-              <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                Paphos, Cyprus
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                UK roots
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                EU/UK
-              </span>
+              <span>Paphos, Cyprus</span>
+              <span>UK roots</span>
+              <span>EU/UK</span>
             </div>
           </div>
 
@@ -49,17 +39,17 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <Link to="/work" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Work
+                    Work
                   </Link>
                 </li>
                 <li>
                   <Link to="/about" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> About
+                    About
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Contact
+                    Contact
                   </Link>
                 </li>
               </ul>
@@ -70,22 +60,22 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <Link to="/photography" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Photography
+                    Photography
                   </Link>
                 </li>
                 <li>
                   <Link to="/videography" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Videography
+                    Videography
                   </Link>
                 </li>
                 <li>
                   <Link to="/music-videos" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Music Videos
+                    Music Videos
                   </Link>
                 </li>
                 <li>
                   <Link to="/design" className={linkClass}>
-                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Design
+                    Design
                   </Link>
                 </li>
               </ul>
