@@ -18,12 +18,13 @@ const MusicVideos = () => {
   });
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* HERO */}
       <Section
         bleed
-        padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
-        className="relative min-h-screen overflow-hidden ctx-grid"
+        // shorter + cleaner on mobile
+        padClassName="pt-20 pb-10 md:pt-28 md:pb-14"
+        className="relative overflow-hidden ctx-grid min-h-[72vh] md:min-h-[78vh]"
       >
         {/* Fullscreen background image */}
         <div className="absolute inset-0 pointer-events-none">
@@ -36,16 +37,16 @@ const MusicVideos = () => {
             decoding="async"
           />
 
-          {/* optional: subtle darkening so white text pops */}
-          <div className="absolute inset-0 bg-black/25" />
+          {/* darken for legibility */}
+          <div className="absolute inset-0 bg-black/35" />
 
-          {/* optional: gradient for nicer depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/35" />
+          {/* depth gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45" />
         </div>
 
-        <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-10 items-end min-h-[calc(100vh-8rem)]">
-            <div className="col-span-12 lg:col-span-8">
+        <Container size="lg" className="relative w-full">
+          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
+            <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
                 kicker="Music Videos"
                 title="Visual rhythm that honors the track"
@@ -55,7 +56,7 @@ const MusicVideos = () => {
                       We design shotlists, choreography, and lighting around the beat. Expect intentional pacing,
                       performance guidance, and edits that hit on the one.
                     </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                    <div className="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
                       <Button to="/contact">Book a video</Button>
                       <Button variant="ghost" to="/videography">
                         See brand films
@@ -66,7 +67,7 @@ const MusicVideos = () => {
               />
             </div>
 
-            <div className="col-span-12 lg:col-span-4">
+            <div className="col-span-12 lg:col-span-4 min-w-0">
               <Card pad="lg">
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">On the day</p>
                 <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
@@ -83,7 +84,7 @@ const MusicVideos = () => {
       {/* PACKAGES */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-start">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Packages</h2>
             <div className="grid gap-3 sm:grid-cols-3">
               {[
@@ -132,7 +133,7 @@ const MusicVideos = () => {
       {/* FAQ */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-2xl text-[var(--text)] mb-3">FAQs</h2>
             <FAQAccordion
               items={[
@@ -154,7 +155,7 @@ const MusicVideos = () => {
             />
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-3 min-w-0">
             <p className="text-[var(--muted)]">
               Want to riff on a treatment? Send your track and references. We’ll pitch visual rhythm and a production approach
               that respects budget and story.
