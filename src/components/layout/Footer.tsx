@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="pt-2">
               <div className="inline-block border border-[var(--accent-dim)] bg-black/10 px-3 py-2">
                 <div className="grid grid-cols-3 gap-4 text-xs text-[var(--muted)]">
-                  {["Paphos, Cyprus", "UK roots", "EU/UK"].map((item) => (
+                  {["Paphos, Cyprus", "UK roots", "Worldwide"].map((item) => (
                     <div key={item} className="flex items-center justify-center gap-2 whitespace-nowrap">
                       <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                       <span className="text-center">{item}</span>
