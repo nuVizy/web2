@@ -18,20 +18,31 @@ const MusicVideos = () => {
   });
 
   return (
-    <div className="absolute inset-0 pointer-events-none">
-  <div className="absolute -top-24 -left-28 opacity-40">
-    <img
-      src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
-      alt=""
-      aria-hidden="true"
-      className="h-[520px] w-[720px] object-contain"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
+    <div>
+      {/* HERO */}
+      <Section
+        bleed
+        padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
+        className="relative overflow-hidden ctx-grid"
+      >
+        {/* Background art layer */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Keep this if your theme uses it; remove if not needed */}
+          <div className="absolute inset-0 hero-abstract" />
 
-  <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
-</div>
+          <div className="absolute -top-24 -left-28 opacity-40">
+            <img
+              src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
+              alt=""
+              aria-hidden="true"
+              className="h-[520px] w-[720px] object-contain"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
+        </div>
 
         <Container size="lg" className="relative">
           <div className="grid grid-cols-12 gap-10 items-end">
@@ -70,6 +81,7 @@ const MusicVideos = () => {
         </Container>
       </Section>
 
+      {/* PACKAGES */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-start">
           <div>
@@ -109,11 +121,16 @@ const MusicVideos = () => {
         </div>
       </Section>
 
+      {/* SELECTED VIDEOS */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <SectionHeaderRow title="Selected videos" action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>} />
+        <SectionHeaderRow
+          title="Selected videos"
+          action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>}
+        />
         <ProjectGrid projects={musicVideoProjects} />
       </Section>
 
+      {/* FAQ */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
           <div>
