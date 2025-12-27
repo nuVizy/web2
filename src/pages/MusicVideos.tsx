@@ -24,7 +24,7 @@ const MusicVideos = () => {
         bleed
         // shorter + cleaner on mobile
         padClassName="pt-20 pb-10 md:pt-28 md:pb-14"
-        className="relative overflow-hidden ctx-grid min-h-[72vh] md:min-h-[78vh]"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-[78vh]"
       >
         {/* Fullscreen background image */}
         <div className="absolute inset-0 pointer-events-none">
