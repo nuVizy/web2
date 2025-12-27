@@ -23,29 +23,28 @@ const MusicVideos = () => {
       <Section
         bleed
         padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid"
+        className="relative min-h-screen overflow-hidden ctx-grid"
       >
-        {/* Background art layer */}
+        {/* Fullscreen background image */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Keep this if your theme uses it; remove if not needed */}
-          <div className="absolute inset-0 hero-abstract" />
+          <img
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-35"
+            loading="eager"
+            decoding="async"
+          />
 
-          <div className="absolute -top-24 -left-28 opacity-40">
-            <img
-              src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
-              alt=""
-              aria-hidden="true"
-              className="h-[520px] w-[720px] object-contain"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
+          {/* optional: subtle darkening so white text pops */}
+          <div className="absolute inset-0 bg-black/25" />
 
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
+          {/* optional: gradient for nicer depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/35" />
         </div>
 
         <Container size="lg" className="relative">
-          <div className="grid grid-cols-12 gap-10 items-end">
+          <div className="grid grid-cols-12 gap-10 items-end min-h-[calc(100vh-8rem)]">
             <div className="col-span-12 lg:col-span-8">
               <SectionHeading
                 kicker="Music Videos"
