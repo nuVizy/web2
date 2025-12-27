@@ -170,7 +170,6 @@ const Home = () => {
     "Warehouse Project",
     "Hit + Run",
     "Shotty Horror",
-    "Sangy",
     "Killa P",
     "Chimpo",
     "Levelz",
