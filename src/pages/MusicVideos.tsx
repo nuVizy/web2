@@ -31,7 +31,7 @@ const MusicVideos = () => {
             src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover opacity-15"
+            className="absolute inset-0 h-full w-full object-cover opacity-75"
             loading="eager"
             decoding="async"
           />
