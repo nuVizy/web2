@@ -57,7 +57,7 @@ const Home = () => {
       >
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766857272/DSC07241_f5hk7t.jpg"
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg"
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-center"
             loading="eager"
