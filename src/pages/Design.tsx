@@ -21,7 +21,7 @@ const Design = () => {
       {/* HERO (full screen image) */}
       <Section
         bleed
-        padClassName="pt-24 pb-12 sm:pt-28 md:pt-36 md:pb-16"
+        padClassName="pt-20 pb-12 sm:pt-28 md:pt-36 md:pb-16"
         className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
       >
         {/* Background image + overlay */}
@@ -40,8 +40,9 @@ const Design = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" />
         </div>
 
-        <Container size="lg" className="relative w-full mt-auto">
-          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end">
+        {/* On mobile: near top. On desktop: pinned to bottom */}
+        <Container size="lg" className="relative w-full mt-0 pt-4 sm:pt-6 md:pt-0 md:mt-auto">
+          <div className="grid grid-cols-12 gap-8 md:gap-10 items-start md:items-end">
             <div className="col-span-12 lg:col-span-8 min-w-0">
               <SectionHeading
                 kicker="Design"
@@ -89,9 +90,7 @@ const Design = () => {
               <li>Album artwork and vinyl packaging.</li>
               <li>Social kits with motion ready assets.</li>
             </ul>
-            <p className="text-[var(--muted)] mt-4 text-sm">
-              Need rollout support? We build templates and brand guides for your team.
-            </p>
+            <p className="text-[var(--muted)] mt-4 text-sm">Need rollout support? We build templates and brand guides for your team.</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 min-w-0">
@@ -111,7 +110,14 @@ const Design = () => {
       </Section>
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
-        <SectionHeaderRow title="Case studies" action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>} />
+        <SectionHeaderRow
+          title="Case studies"
+          action={
+            <TextLink className="min-h-[44px]" to="/work">
+              View all work
+            </TextLink>
+          }
+        />
         <ProjectGrid projects={designProjects} />
       </Section>
 
