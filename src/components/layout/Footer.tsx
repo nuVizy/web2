@@ -9,105 +9,96 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-[var(--accent-dim)] bg-[var(--panel)]">
-      <Container size="lg" className="py-10 sm:py-12">
-        <div className="grid gap-10 md:grid-cols-12 items-start">
-          {/* Brand / statement */}
-          <div className="md:col-span-6 space-y-4 min-w-0">
-            <p
-              className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
-              data-prefix="//"
-            >
-              nuViz Studio
+      <Container size="lg" className="py-7 sm:py-8">
+        <div className="grid gap-6 md:grid-cols-12 items-start">
+          {/* Brand / statement (condensed) */}
+          <div className="md:col-span-7 space-y-2 min-w-0">
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]" aria-label="nuViz Studio">
+              <span className="text-[var(--accent-green)]">//</span> nuViz Studio
             </p>
 
-            <h3 className="font-mono text-2xl sm:text-3xl leading-tight text-[var(--accent-green)]">
+            <p className="font-mono text-lg sm:text-xl leading-snug text-[var(--accent-green)]">
               Visual systems for image, sound, and motion.
-            </h3>
-
-            <p className="text-sm text-[var(--muted)] max-w-[58ch] code-prefix block" data-prefix=">">
-              Crafted visuals with rhythm, patience, and sharp intuition — built to hold up across campaigns, releases, and
-              stages.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[var(--muted)]">
+            <p className="text-sm text-[var(--muted)] max-w-[62ch]">
+              <span className="font-mono text-[var(--accent-green)]">&gt;</span>{" "}
+              Crafted visuals with rhythm, patience, and sharp intuition.
+            </p>
+
+            <div className="pt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--muted)]">
               <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">//</span>
+                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                 Paphos, Cyprus
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">//</span>
+                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                 UK roots
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="font-mono text-[var(--accent-green)]">//</span>
-                Available EU/UK
+                <span className="font-mono text-[var(--accent-green)]">&gt;</span>
+                EU/UK
               </span>
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="md:col-span-3 space-y-3 min-w-0">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Navigation</h4>
-            <ul className="space-y-1">
-              <li>
-                <Link to="/work" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Work
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Links (two compact columns) */}
+          <div className="md:col-span-5 grid grid-cols-2 gap-6 min-w-0">
+            <div className="space-y-2">
+              <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Navigation</h4>
+              <ul className="space-y-1">
+                <li>
+                  <Link to="/work" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Work
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Modules */}
-          <div className="md:col-span-3 space-y-3 min-w-0">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Modules</h4>
-            <ul className="space-y-1">
-              <li>
-                <Link to="/photography" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Photography
-                </Link>
-              </li>
-              <li>
-                <Link to="/videography" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Videography
-                </Link>
-              </li>
-              <li>
-                <Link to="/music-videos" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Music Videos
-                </Link>
-              </li>
-              <li>
-                <Link to="/design" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Design
-                </Link>
-              </li>
-            </ul>
+            <div className="space-y-2">
+              <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Modules</h4>
+              <ul className="space-y-1">
+                <li>
+                  <Link to="/photography" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Photography
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/videography" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Videography
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/music-videos" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Music Videos
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/design" className={linkClass}>
+                    <span className="font-mono text-[var(--accent-green)]">&gt;</span> Design
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </Container>
 
-      {/* Bottom bar */}
+      {/* Bottom bar (condensed) */}
       <div className="border-t border-[var(--accent-dim)]">
-        <Container size="lg" className="py-4">
+        <Container size="lg" className="py-3">
           <div className="text-xs text-[var(--muted)] font-mono">
-            <span className="text-[var(--accent-green)]">//</span> © {year} nuViz Studio. All rights reserved.
+            <span className="text-[var(--accent-green)]">//</span> © {year} nuViz Studio
           </div>
         </Container>
       </div>
