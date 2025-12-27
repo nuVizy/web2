@@ -1,5 +1,4 @@
 import JsonLdOrganization from "../components/JsonLdOrganization";
-import AbstractArt from "../components/ui/AbstractArt";
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
 import Card from "../components/ui/Card";
@@ -28,7 +27,7 @@ const Home = () => {
   const featuredProject = allProjects.find((p) => p.slug === "halcyon-brand-film") ?? allProjects[0];
 
   return (
-    <div>
+    <div className="w-full max-w-[100vw] overflow-x-hidden">
       <JsonLdOrganization
         name="nuViz Studio"
         url="https://www.nuviz.studio"
@@ -51,29 +50,29 @@ const Home = () => {
         // sameAs={["https://instagram.com/...", "https://vimeo.com/..."]}
       />
 
-      {/* Hero */}
+      {/* Hero (full screen desktop + mobile) */}
       <Section
         bleed
         padClassName="pt-28 pb-14 md:pt-36 md:pb-20"
-        className="relative overflow-hidden ctx-grid"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col"
       >
-    <div className="absolute inset-0 pointer-events-none">
-  <img
-    src="https://res.cloudinary.com/de8d8i155/image/upload/v1766857272/DSC07241_f5hk7t.jpg"
-    alt=""
-    className="absolute inset-0 h-full w-full object-cover"
-    loading="eager"
-    decoding="async"
-  />
-  {/* keep readability consistent */}
-  <div className="absolute inset-0 bg-black/50" />
-  <div className="absolute inset-0 opacity-10 bg-gradient-to-b from-black/10 to-transparent" />
-</div>
-
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766857272/DSC07241_f5hk7t.jpg"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+          {/* Darker overlay for legibility */}
+          <div className="absolute inset-0 bg-black/65" />
+          {/* Depth gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/75" />
+        </div>
 
         <Container size="lg" className="relative">
           <div className="grid grid-cols-12 gap-8 items-end">
-            <header className="col-span-12 lg:col-span-7">
+            <header className="col-span-12 lg:col-span-7 min-w-0">
               <p
                 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
                 data-prefix="//"
@@ -106,7 +105,7 @@ const Home = () => {
               </div>
             </header>
 
-            <aside className="col-span-12 lg:col-span-5">
+            <aside className="col-span-12 lg:col-span-5 min-w-0">
               <Card>
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -194,17 +193,16 @@ const Home = () => {
       </Section>
 
       <FullBleedImageSection
-  className="min-h-[56svh] md:min-h-[40svh]"
-  image={{ src: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg", alt: "" }}
-  kicker="On location"
-  title="Small crews. Clear direction."
-  subtitle="The work is built to travel across stills, motion and design without losing its shape."
-  primaryCta={{ label: "Start a project", to: "/contact" }}
-  secondaryCta={{ label: "See work", to: "/work" }}
-/>
+        className="min-h-[56svh] md:min-h-[40svh]"
+        image={{ src: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg", alt: "" }}
+        kicker="On location"
+        title="Small crews. Clear direction."
+        subtitle="The work is built to travel across stills, motion and design without losing its shape."
+        primaryCta={{ label: "Start a project", to: "/contact" }}
+        secondaryCta={{ label: "See work", to: "/work" }}
+      />
 
-
-      {/* Selected collaborators (swap these for real credits) */}
+      {/* Selected collaborators */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
         <SectionHeading
           kicker="Selected collaborators"
@@ -226,7 +224,7 @@ const Home = () => {
       {/* Work / Approach */}
       <Section size="xl" padClassName="py-12 md:py-16" tone="borderTop">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
               <div>
                 <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Selected work</p>
@@ -237,7 +235,7 @@ const Home = () => {
             <ProjectGrid projects={allProjects.slice(0, 6)} />
           </div>
 
-          <aside className="lg:col-span-5 lg:pt-10">
+          <aside className="lg:col-span-5 lg:pt-10 min-w-0">
             <SectionHeading
               kicker="Approach"
               title="We think in sequences, not deliverables."
@@ -268,10 +266,21 @@ const Home = () => {
         <div className="mt-8">
           <ProcessTimeline
             steps={[
-              { title: "Discovery", description: "References, constraints, success criteria — and a single sentence that anchors the work." },
-              { title: "System design", description: "Tone, palette, pacing, typography, lighting language — documented and agreed." },
+              {
+                title: "Discovery",
+                description:
+                  "References, constraints, success criteria — and a single sentence that anchors the work.",
+              },
+              {
+                title: "System design",
+                description:
+                  "Tone, palette, pacing, typography, lighting language — documented and agreed.",
+              },
               { title: "Production", description: "Small crew, decisive direction, clean coverage." },
-              { title: "Post & delivery", description: "Cut, grade, layouts and exports packaged for every platform you need." },
+              {
+                title: "Post & delivery",
+                description: "Cut, grade, layouts and exports packaged for every platform you need.",
+              },
             ]}
           />
         </div>
@@ -295,7 +304,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* FAQ (trust + long-tail SEO) */}
+      {/* FAQ */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
         <SectionHeading kicker="FAQ" title="Quick answers" />
         <div className="mt-8">
@@ -318,8 +327,7 @@ const Home = () => {
               },
               {
                 question: "How fast do you reply?",
-                answer:
-                  "Within one business day. We’ll respond with a proposed direction, structure, and timeline.",
+                answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline.",
               },
             ]}
           />
@@ -329,7 +337,7 @@ const Home = () => {
       {/* Quiet CTA */}
       <Section size="lg" padClassName="py-14 md:py-16" tone="borderTop">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
+          <div className="min-w-0">
             <h2 className="font-mono text-xl text-[var(--text)]">Start with a reference and an intention.</h2>
             <p className="text-[var(--muted)] mt-2 max-w-2xl">
               Send links, mood, constraints, and the outcome you need. We respond within one business day with a proposed
