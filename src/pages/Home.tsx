@@ -99,9 +99,6 @@ const Home = () => {
                 <Button variant="ghost" to="/work">
                   View work
                 </Button>
-                <TextLink to="/about" className="ml-1">
-                  Read the studio story
-                </TextLink>
               </div>
             </header>
 
