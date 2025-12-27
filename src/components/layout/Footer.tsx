@@ -12,7 +12,7 @@ const Footer = () => {
       <Container size="lg" className="py-10 sm:py-12">
         <div className="grid gap-10 md:grid-cols-12 items-start">
           {/* Brand / statement */}
-          <div className="md:col-span-5 space-y-4 min-w-0">
+          <div className="md:col-span-6 space-y-4 min-w-0">
             <p
               className="font-mono text-xs uppercase tracking-widest text-[var(--muted)] code-prefix code-prefix-sm"
               data-prefix="//"
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Navigation */}
           <div className="md:col-span-3 space-y-3 min-w-0">
             <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Navigation</h4>
             <ul className="space-y-1">
@@ -70,70 +70,35 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="md:col-span-2 space-y-3 min-w-0">
+          {/* Modules */}
+          <div className="md:col-span-3 space-y-3 min-w-0">
             <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Modules</h4>
             <ul className="space-y-1">
               <li>
                 <Link to="/photography" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">//</span>
+                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                   Photography
                 </Link>
               </li>
               <li>
                 <Link to="/videography" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">//</span>
+                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                   Videography
                 </Link>
               </li>
               <li>
                 <Link to="/music-videos" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">//</span>
+                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                   Music Videos
                 </Link>
               </li>
               <li>
                 <Link to="/design" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">//</span>
+                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
                   Design
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Social + contact */}
-          <div className="md:col-span-2 space-y-3 min-w-0">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-[var(--muted)]">Connect</h4>
-            <ul className="space-y-1">
-              <li>
-                <a href="#" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Vimeo
-                </a>
-              </li>
-              <li>
-                <a href="#" className={linkClass}>
-                  <span className="font-mono text-[var(--accent-green)]">&gt;</span>
-                  Behance
-                </a>
-              </li>
-            </ul>
-
-            <div className="pt-3 text-xs text-[var(--muted)] code-prefix block" data-prefix=">">
-              Email:{" "}
-              <a
-                className="underline underline-offset-4 hover:text-[var(--accent-green)] transition-colors"
-                href="mailto:studio@nuviz.studio"
-              >
-                studio@nuviz.studio
-              </a>
-            </div>
           </div>
         </div>
       </Container>
@@ -141,18 +106,8 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-[var(--accent-dim)]">
         <Container size="lg" className="py-4">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--muted)]">
-            <div className="font-mono">
-              <span className="text-[var(--accent-green)]">//</span> © {year} nuViz Studio. All rights reserved.
-            </div>
-
-            <div className="font-mono flex items-center gap-2">
-              <span className="text-[var(--accent-green)]">&gt;</span>
-              Built for{" "}
-              <span className="text-[var(--accent-green)]">clarity</span>
-              <span className="text-[var(--accent-dim)]">/</span>
-              <span className="text-[var(--accent-green)]">restraint</span>
-            </div>
+          <div className="text-xs text-[var(--muted)] font-mono">
+            <span className="text-[var(--accent-green)]">//</span> © {year} nuViz Studio. All rights reserved.
           </div>
         </Container>
       </div>
