@@ -1,4 +1,28 @@
 /* -------------------------------------------
+   Base layout safety (prevents mobile overflow)
+-------------------------------------------- */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  /* fallback if --bg isn't defined somewhere */
+  background: var(--bg, #070a07);
+  position: relative;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+}
+
+/* -------------------------------------------
    Matrix vibe (subtle, premium, not cheesy)
    Drop-in overlays + utilities
 -------------------------------------------- */
@@ -15,8 +39,7 @@
 
 /* Global background treatment: grid + deep vignette */
 body {
-  background: var(--bg);
-  position: relative;
+  background: var(--bg, #070a07);
 }
 
 /* Grid layer (very light) */
@@ -77,12 +100,6 @@ body::after {
   100% { transform: translate3d(0, 0, 0); }
 }
 
-/* Ensure app content sits above overlays */
-#root {
-  position: relative;
-  z-index: 1;
-}
-
 /* Utility: subtle green glow for important headings, badges, etc. */
 .matrix-glow {
   text-shadow: var(--matrix-glow);
@@ -92,8 +109,8 @@ body::after {
 .matrix-panel {
   background: linear-gradient(
     to bottom,
-    color-mix(in oklab, var(--bg) 88%, rgba(0,0,0,0.35)),
-    color-mix(in oklab, var(--bg) 78%, rgba(0,0,0,0.55))
+    color-mix(in oklab, var(--bg, #070a07) 88%, rgba(0,0,0,0.35)),
+    color-mix(in oklab, var(--bg, #070a07) 78%, rgba(0,0,0,0.55))
   );
   border: 1px solid var(--matrix-dim);
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
