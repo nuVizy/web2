@@ -16,9 +16,10 @@ const Photography = () => {
 
   return (
     <div className="overflow-x-hidden">
-      {/* HERO (was previously the section below) */}
+      {/* HERO */}
       {featuredSeries ? (
         <FullBleedImageSection
+          className="flex flex-col justify-end"
           image={featuredSeries.coverImage}
           kicker="Photography"
           title="Frames with calm intent"
