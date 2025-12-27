@@ -115,7 +115,7 @@ export const photographyProjects: Project[] = [
   {
     id: 'photo-03',
     slug: 'solstice-shores', // keep slug the same
-    title: 'Kojay Radical',
+    title: 'Kojay Radical - MIF International',
     year: 2017,
     category: 'Photography',
     role: 'Lead Photographer',
