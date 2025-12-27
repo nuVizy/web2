@@ -40,7 +40,7 @@ const Header = () => {
     <header className="absolute inset-x-0 top-0 z-50">
       <Container size="lg">
         <div className="flex items-center justify-between h-20 py-4">
-          {/* Brand: nuViz // Visual Systems */}
+          {/* Brand: nuViz // VISUAL SYSTEMS */}
           <Link to="/" className="flex items-center gap-3 font-display text-sm" onClick={closeMenu}>
             <span className="text-[var(--accent-green)] font-mono text-xs tracking-wider">nuViz</span>
             <span className="text-[var(--muted)] font-mono text-xs tracking-wider">{"//"}</span>
