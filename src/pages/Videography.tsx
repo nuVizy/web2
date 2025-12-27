@@ -43,7 +43,8 @@ const Videography = () => {
         {/* Content pinned to bottom */}
         <Container size="lg" className="relative mt-auto w-full max-w-full">
           <div className="grid grid-cols-12 gap-8 md:gap-10 items-end w-full min-w-0">
-            <div className="col-span-12 lg:col-span-8 min-w-0">
+            {/* Full width (no right card) */}
+            <div className="col-span-12 min-w-0">
               <SectionHeading
                 kicker="Videography"
                 title="Films that breathe, with crisp pacing"
@@ -62,17 +63,6 @@ const Videography = () => {
                   </>
                 }
               />
-            </div>
-
-            <div className="col-span-12 lg:col-span-4 min-w-0">
-              <Card pad="lg">
-                <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Deliverables</p>
-                <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-                  <li>• Hero edit + social cutdowns</li>
-                  <li>• Captions, exports, masters</li>
-                  <li>• Optional stills pulled from footage</li>
-                </ul>
-              </Card>
             </div>
           </div>
         </Container>
@@ -152,7 +142,7 @@ const Videography = () => {
                 },
                 {
                   question: 'Sound & music',
-                  answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
+                 answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
                 }
               ]}
             />
