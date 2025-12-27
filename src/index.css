@@ -66,3 +66,39 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* nuViz marquee / ticker */
+@keyframes nuviz-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.nuviz-marquee {
+  overflow: hidden;
+}
+
+.nuviz-marquee__track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  animation: nuviz-marquee var(--nuviz-marquee-duration, 28s) linear infinite;
+  will-change: transform;
+}
+
+.nuviz-marquee:hover .nuviz-marquee__track,
+.nuviz-marquee:focus-within .nuviz-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nuviz-marquee {
+    overflow-x: auto;
+  }
+  .nuviz-marquee__track {
+    animation: none;
+    transform: none;
+  }
+}
