@@ -25,7 +25,7 @@ export const photographyProjects: Project[] = [
     id: 'photo-01',
     slug: 'lumen-portraits',
     title: 'IAMDDB - Manchester.',
-    year: 2024,
+    year: 2019,
     category: 'Photography',
     role: 'Concert Photographer',
     description:
