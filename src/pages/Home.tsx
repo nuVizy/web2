@@ -229,7 +229,7 @@ const Home = () => {
         <SectionHeading
           kicker="Notes"
           title="What clients tend to say"
-          description="A selection of clients"
+          description=""
         />
         <div className="mt-8">
           <TestimonialBlock
