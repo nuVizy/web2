@@ -1,4 +1,3 @@
-import AbstractArt from '../components/ui/AbstractArt';
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
@@ -19,15 +18,20 @@ const MusicVideos = () => {
   });
 
   return (
-    <div>
-      <Section bleed padClassName="pt-28 pb-12 md:pt-36 md:pb-16" className="relative overflow-hidden ctx-grid">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 hero-abstract" />
-          <div className="absolute -top-24 -left-28 opacity-40">
-            <AbstractArt className="h-[520px] w-[720px]" variant="soft" />
-          </div>
-          <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
-        </div>
+    <div className="absolute inset-0 pointer-events-none">
+  <div className="absolute -top-24 -left-28 opacity-40">
+    <img
+      src="https://res.cloudinary.com/de8d8i155/image/upload/v1766869984/1a22fd29-d15c-4a20-aa67-fd070a34a692.png"
+      alt=""
+      aria-hidden="true"
+      className="h-[520px] w-[720px] object-contain"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+
+  <div className="absolute inset-0 opacity-15 bg-gradient-to-b from-black/20 to-transparent" />
+</div>
 
         <Container size="lg" className="relative">
           <div className="grid grid-cols-12 gap-10 items-end">
