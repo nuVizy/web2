@@ -59,9 +59,6 @@ const Photography = () => {
         />
 
         <div className="mt-8">
-          <Button className="w-full sm:w-auto" to="/contact">
-            Request a quote
-          </Button>
         </div>
       </Section>
 
