@@ -4,10 +4,13 @@ type PageMeta = {
   title: string;
   description: string;
   canonicalPath?: string; // e.g. "/work"
-  ogImage?: string; // e.g. "https://www.nuviz.studio/og.jpg"
+  ogImage?: string; // e.g. "https://www.nuviz.studio/og.jpg" OR "/og.jpg"
   ogType?: "website" | "article";
   robots?: string; // default: "index,follow"
 };
+
+const DEFAULT_OG_IMAGE =
+  "https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg";
 
 function upsertMeta(attr: "name" | "property", key: string, content: string) {
   if (!content) return;
@@ -62,18 +65,20 @@ export function usePageMeta(meta: PageMeta) {
     const ogDesc = description || "";
     const ogUrl = canonical;
 
+    // Default OG image unless page overrides it
+    const ogImage = meta.ogImage ? absoluteUrl(meta.ogImage) : absoluteUrl(DEFAULT_OG_IMAGE);
+
     upsertMeta("property", "og:title", ogTitle);
     upsertMeta("property", "og:description", ogDesc);
     upsertMeta("property", "og:type", meta.ogType || "website");
     upsertMeta("property", "og:url", ogUrl);
-
-    if (meta.ogImage) upsertMeta("property", "og:image", absoluteUrl(meta.ogImage));
+    upsertMeta("property", "og:image", ogImage);
 
     // Twitter
-    upsertMeta("name", "twitter:card", meta.ogImage ? "summary_large_image" : "summary");
+    upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", ogTitle);
     upsertMeta("name", "twitter:description", ogDesc);
-    if (meta.ogImage) upsertMeta("name", "twitter:image", absoluteUrl(meta.ogImage));
+    upsertMeta("name", "twitter:image", ogImage);
 
     upsertMeta("name", "robots", meta.robots || "index,follow");
   }, [meta.title, meta.description, meta.canonicalPath, meta.ogImage, meta.ogType, meta.robots]);
