@@ -33,7 +33,7 @@ const About = () => {
             decoding="async"
           />
           {/* dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/75" />
           {/* subtle depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         </div>
