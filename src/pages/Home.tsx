@@ -299,7 +299,7 @@ const Home = () => {
           as="h2"
           kicker="Selected collaborators"
           title="Work that lives in culture facing rooms."
-          description="Hover/focus to pause the ticker. Reduced motion stops animation automatically."
+          description=
         />
 
         <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
@@ -395,7 +395,7 @@ const Home = () => {
               title="We think in sequences, not deliverables."
               description={
                 <>
-                  <p>Listen → define → structure → execute → refine.</p>
+                  <p>Listen - define - structure - execute - refine.</p>
                   <p className="mt-3">
                     One strong idea, carried through every frame, cut, and output — with a delivery plan
                     your team can reuse.
