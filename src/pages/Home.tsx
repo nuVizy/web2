@@ -182,7 +182,7 @@ const Home = () => {
                 nuViz
                 <span className="sr-only">
                   {" "}
-                  — Visual systems studio in Paphos, Cyprus for photography, film, music videos and design
+                  — Visual systems studio in Cyprus for photography, film, music videos and design
                 </span>
               </h1>
 
