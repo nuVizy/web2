@@ -114,7 +114,7 @@ export const photographyProjects: Project[] = [
 
   {
     id: 'photo-03',
-    slug: 'solstice-shores', // keep slug the same
+    slug: 'Kojay-radical', // keep slug the same
     title: 'Kojay Radical - Manchester International Festival',
     year: 2017,
     category: 'Photography',
