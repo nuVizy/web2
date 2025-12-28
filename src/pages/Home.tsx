@@ -194,7 +194,7 @@ const Home = () => {
               </p>
 
               <p className="mt-3 text-sm text-[var(--muted)] max-w-2xl">
-                Built in the UK and now based in Paphos, Cyprus. Working across Europe with artists,
+                Built in the UK and now based in Cyprus. Working across Europe with artists,
                 brands, labels and stages.
               </p>
 
