@@ -23,7 +23,7 @@ export type Project = {
 export const photographyProjects: Project[] = [
   {
     id: 'photo-01',
-    slug: 'lumen-portraits',
+    slug: 'IAMDDB',
     title: 'IAMDDB - Manchester.',
     year: 2019,
     category: 'Photography',
