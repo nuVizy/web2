@@ -76,7 +76,7 @@ export const photographyProjects: Project[] = [
 
   {
     id: 'photo-02',
-    slug: 'CASISDEAD', // keep slug the same
+    slug: 'CASISDEAD',
     title: 'CASISDEAD - House Of Vans.',
     year: 2018,
     category: 'Photography',
@@ -114,7 +114,7 @@ export const photographyProjects: Project[] = [
 
   {
     id: 'photo-03',
-    slug: 'Kojay-radical', // keep slug the same
+    slug: 'Kojay-radical',
     title: 'Kojay Radical - Manchester International Festival',
     year: 2017,
     category: 'Photography',
@@ -143,6 +143,35 @@ export const photographyProjects: Project[] = [
     ],
     credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
     tags: ['Event', 'Festival', 'Live Music', 'MIF', 'Manchester'],
+    location: 'Manchester, UK'
+  },
+
+  {
+    id: 'photo-04',
+    slug: 'bicep-depot-mayfield',
+    title: 'Bicep - Depot Mayfield',
+    year: 2021,
+    category: 'Photography',
+    role: 'Concert Photographer',
+    description:
+      'Live coverage at Depot Mayfield — Bicep in full motion: strobes, haze, and warehouse-scale energy captured with an editorial eye for light and rhythm.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935677/NVZ04279_jwuioh.jpg',
+      alt: 'Bicep performing live at Depot Mayfield — concert photography'
+    },
+    galleryImages: [
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935686/NVZ04559_xegpqu.jpg', alt: 'Bicep at Depot Mayfield — gallery image 01' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935677/NVZ04585_owh89g.jpg', alt: 'Bicep at Depot Mayfield — gallery image 02' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935678/NVZ04574_nosknw.jpg', alt: 'Bicep at Depot Mayfield — gallery image 03' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935677/NVZ04274_ahj6lf.jpg', alt: 'Bicep at Depot Mayfield — gallery image 04' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935679/NVZ04633_oood8o.jpg', alt: 'Bicep at Depot Mayfield — gallery image 05' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935680/NVZ04983_vkxsbo.jpg', alt: 'Bicep at Depot Mayfield — gallery image 06' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935683/NVZ04635_nvhppn.jpg', alt: 'Bicep at Depot Mayfield — gallery image 07' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935677/NVZ04589_coetnj.jpg', alt: 'Bicep at Depot Mayfield — gallery image 08' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766935677/NVZ04332_fnji8b.jpg', alt: 'Bicep at Depot Mayfield — gallery image 09' }
+    ],
+    credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
+    tags: ['Concert', 'Live Music', 'Bicep', 'Manchester'],
     location: 'Manchester, UK'
   }
 ];
