@@ -39,14 +39,15 @@ const CREDITS = [
 ];
 
 const Home = () => {
-  usePageMeta({
-    title: "nuViz Studio | Visual Systems for Photography, Film & Design",
-    description:
-      "nuViz is a visual systems studio — built in the UK and now based in Paphos, Cyprus. Photography, film, music videos and design for artists, brands, labels and stages.",
-    canonicalPath: "/",
-    ogType: "website",
-    // ogImage: "/og.jpg",
-  });
+usePageMeta({
+  title: "nuViz Studio | Visual Systems for Photography, Film & Design",
+  description:
+    "nuViz is a visual systems studio — built in the UK and now based in Paphos, Cyprus. Photography, film, music videos and design for artists, brands, labels and stages.",
+  canonicalPath: "/",
+  ogType: "website",
+  ogImage: "https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg",
+});
+
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden">
