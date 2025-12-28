@@ -200,7 +200,7 @@ const Home = () => {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button to="/contact" className="shadow-soft">
-                  Book a project
+                  Check availability
                 </Button>
                 <Button variant="ghost" to="/work">
                   View work
