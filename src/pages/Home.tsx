@@ -299,7 +299,6 @@ const Home = () => {
           as="h2"
           kicker="Selected collaborators"
           title="Work that lives in culture facing rooms."
-          description=
         />
 
         <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
