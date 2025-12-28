@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <!-- Primary -->
+    <!-- Primary (static fallback; your usePageMeta will override on routes that run JS) -->
     <title>nuViz Studio | Visual Systems for Photography, Film & Design</title>
     <meta
       name="description"
       content="nuViz is a visual systems studio — built in the UK and now based in Paphos, Cyprus. Photography, film, music videos and design for artists, brands, labels and stages."
     />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://www.nuviz.studio" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Indexing -->
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://www.nuviz.studio/" />
+
+    <!-- Theming / PWA-ish polish -->
+    <meta name="theme-color" content="#0b0f0c" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Icons (add these files in /public) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="nuViz Studio" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content="nuViz Studio | Visual Systems for Photography, Film & Design" />
     <meta
       property="og:description"
       content="nuViz is a visual systems studio — built in the UK and now based in Paphos, Cyprus. Photography, film, music videos and design for artists, brands, labels and stages."
     />
-    <meta property="og:url" content="https://www.nuviz.studio" />
+    <meta property="og:url" content="https://www.nuviz.studio/" />
 
     <!-- ✅ Social sharing image (static for scrapers) -->
     <meta
       property="og:image"
-      content="https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg"
+      content="https://res.cloudinary.com/de8d8i155/image/upload/f_auto,q_auto,c_fill,w_1200,h_630,g_auto/v1766872540/DSC05869_February_19_2017_jen543.jpg"
     />
-    <meta property="og:image:secure_url" content="https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg" />
+    <meta
+      property="og:image:secure_url"
+      content="https://res.cloudinary.com/de8d8i155/image/upload/f_auto,q_auto,c_fill,w_1200,h_630,g_auto/v1766872540/DSC05869_February_19_2017_jen543.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="nuViz Studio — Visual Systems" />
+    <meta property="og:image:alt" content="nuViz Studio — Visual Systems for Photography, Film & Design" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="nuviz.studio" />
+    <meta name="twitter:url" content="https://www.nuviz.studio/" />
     <meta name="twitter:title" content="nuViz Studio | Visual Systems for Photography, Film & Design" />
     <meta
       name="twitter:description"
@@ -41,12 +65,16 @@
     />
     <meta
       name="twitter:image"
-      content="https://res.cloudinary.com/de8d8i155/image/upload/v1766872540/DSC05869_February_19_2017_jen543.jpg"
+      content="https://res.cloudinary.com/de8d8i155/image/upload/f_auto,q_auto,c_fill,w_1200,h_630,g_auto/v1766872540/DSC05869_February_19_2017_jen543.jpg"
     />
+    <meta name="twitter:image:alt" content="nuViz Studio — Visual Systems for Photography, Film & Design" />
 
-    <!-- Fonts -->
+    <!-- Performance: resource hints -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
       rel="stylesheet"
