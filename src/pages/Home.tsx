@@ -187,16 +187,21 @@ const Home = () => {
               </h1>
 
               <p
-                className="mt-5 text-lg text-[var(--text)] max-w-2xl code-prefix block"
-                data-prefix=">"
-              >
-                A disciplined visual language for image, sound, and motion.
-              </p>
+  className="mt-5 text-lg text-[var(--text)] max-w-2xl code-prefix block"
+  data-prefix=">"
+>
+  A disciplined visual language for image, sound, and motion.
+</p>
 
-              <p className="mt-3 text-sm text-[var(--muted)] max-w-2xl">
-                Built in the UK and now based in Cyprus. Working across Europe with artists,
-                brands, labels and stages.
-              </p>
+<p className="mt-3 text-sm text-[var(--text)] max-w-2xl">
+  Photography, film and design for campaigns, releases and brands that need a consistent look across every output.
+</p>
+
+<p className="mt-3 text-sm text-[var(--muted)] max-w-2xl">
+  Built in the UK and now based in Cyprus. Working across Europe with artists,
+  brands, labels and stages.
+</p>
+
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button to="/contact" className="shadow-soft">
