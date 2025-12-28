@@ -76,7 +76,7 @@ export const photographyProjects: Project[] = [
 
   {
     id: 'photo-02',
-    slug: 'neon-nightwalk', // keep slug the same
+    slug: 'CASISDEAD', // keep slug the same
     title: 'CASISDEAD - House Of Vans.',
     year: 2018,
     category: 'Photography',
