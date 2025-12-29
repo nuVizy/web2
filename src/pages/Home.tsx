@@ -293,7 +293,7 @@ const Home = () => {
       <FullBleedImageSection
         className="min-h-[56svh] md:min-h-[40svh]"
         image={{
-          src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766857278/DSC07259_o6oal5.jpg",
+          src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766855709/DSC09562_g3id0y.jpg",
           alt: "Film crew on location in Cyprus",
         }}
         kicker="On location"
