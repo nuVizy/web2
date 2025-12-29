@@ -1,12 +1,10 @@
 import Button from '../components/ui/Button';
-import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
 import FAQAccordion from '../components/ui/FAQAccordion';
 import FullBleedImageSection from '../components/ui/FullBleedImageSection';
 import ProjectGrid from '../components/ui/ProjectGrid';
 import Section from '../components/ui/Section';
 import SectionHeaderRow from '../components/ui/SectionHeaderRow';
-import SectionHeading from '../components/ui/SectionHeading';
 import TextLink from '../components/ui/TextLink';
 import { videographyProjects } from '../content/portfolio';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -17,42 +15,35 @@ const Videography = () => {
     description: 'Film direction and cinematography by nuViz Studio.'
   });
 
-  const featuredFilm = videographyProjects[0];
+  const featuredFilm = videographyProjects?.[0];
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden">
-      <Section
-        bleed
-        padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
-        className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col w-full max-w-full"
-      >
-        {/* HERO */}
-<FullBleedImageSection
-  className="flex flex-col justify-end"
-  image={{
-    src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766877504/29b1f1af-d0a3-48de-8824-c759aac8616a.png",
-    alt: "nuViz — videography frame",
-  }}
-  kicker="Videography"
-  title="Films that breathe, with crisp pacing"
-  subtitle="Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep stories human while keeping crews nimble."
-  primaryCta={{ label: "Start a project", to: "/contact" }}
-  secondaryCta={{ label: "See music videos", to: "/music-videos" }}
-/>
-        
-
+      {/* HERO (match Photography style) */}
       {featuredFilm ? (
-        <div className="w-full max-w-[100vw] overflow-x-hidden">
-          <FullBleedImageSection
-            image={featuredFilm.coverImage}
-            kicker="Videography"
-            title="Cinematic coverage, calm logistics"
-            subtitle="From treatment to delivery, we keep crews lean and outputs ready for web, broadcast, and socials."
-            primaryCta={{ label: 'Request a quote', to: '/contact' }}
-            secondaryCta={{ label: 'View work', to: '/work' }}
-          />
-        </div>
-      ) : null}
+        <FullBleedImageSection
+          className="min-h-[44svh] md:min-h-[40svh] flex flex-col justify-end"
+          image={featuredFilm.coverImage}
+          kicker="Videography"
+          title="Films that breathe, with crisp pacing"
+          subtitle="Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep stories human while keeping crews nimble."
+          primaryCta={{ label: 'Start a project', to: '/contact' }}
+          secondaryCta={{ label: 'See music videos', to: '/music-videos' }}
+        />
+      ) : (
+        <FullBleedImageSection
+          className="min-h-[44svh] md:min-h-[40svh] flex flex-col justify-end"
+          image={{
+            src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766877504/29b1f1af-d0a3-48de-8824-c759aac8616a.png',
+            alt: 'nuViz — videography frame'
+          }}
+          kicker="Videography"
+          title="Films that breathe, with crisp pacing"
+          subtitle="Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep stories human while keeping crews nimble."
+          primaryCta={{ label: 'Start a project', to: '/contact' }}
+          secondaryCta={{ label: 'See music videos', to: '/music-videos' }}
+        />
+      )}
 
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-8 lg:grid-cols-2 items-start min-w-0">
@@ -68,6 +59,7 @@ const Videography = () => {
               <li>On set lighting adjustments to keep continuity.</li>
             </ul>
           </div>
+
           <Card>
             <h3 className="font-mono text-xl text-[var(--text)] mb-3">Deliverables</h3>
             <ul className="space-y-2 text-sm text-[var(--muted)] list-disc list-inside">
@@ -115,11 +107,12 @@ const Videography = () => {
                 },
                 {
                   question: 'Sound & music',
-                 answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
+                  answer: 'We shape bespoke soundbeds, capture nat sound, and clear music with your team or ours.'
                 }
               ]}
             />
           </div>
+
           <div className="space-y-3 min-w-0">
             <p className="text-[var(--muted)]">
               Ready for cameras to roll? Share your script, brief, or treatment. We will respond with crew, gear list, and a
