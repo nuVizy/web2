@@ -16,6 +16,10 @@ import { allProjects } from "../content/portfolio";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const CREDITS = [
+  "Adidas",
+  "Nike",
+  "Tessuti",
+  "TPG",
   "Manchester International Festival",
   "MC DRS",
   "Royal Exchange Theatre",
