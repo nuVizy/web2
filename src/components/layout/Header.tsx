@@ -7,10 +7,10 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/photography", label: "Photography" },
   { to: "/videography", label: "Videography" },
-  { to: "/work", label: "Work" }, // moved after videography
   { to: "/music-videos", label: "Music Videos" },
   { to: "/design", label: "Design" },
   { to: "/about", label: "About" },
+  { to: "/work", label: "Work" }, // moved after videography
   { to: "/contact", label: "Contact" },
 ];
 
