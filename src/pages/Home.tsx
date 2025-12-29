@@ -463,32 +463,6 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Testimonials */}
-      <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
-        <SectionHeading as="h2" kicker="Notes" title="What clients tend to say" />
-        <div className="mt-8">
-          <TestimonialBlock
-            testimonials={[
-              {
-                quote: "The direction was calm, the results were sharp — everything felt intentional.",
-                name: "Producer",
-                role: "Brand film",
-              },
-              {
-                quote: "They translated one reference into an entire visual language across assets.",
-                name: "Marketing Lead",
-                role: "Campaign",
-              },
-              {
-                quote: "Fast replies, clean delivery, and a system we could keep using afterwards.",
-                name: "Artist Manager",
-                role: "Music release",
-              },
-            ]}
-          />
-        </div>
-      </Section>
-
       {/* FAQ */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
         <SectionHeading as="h2" kicker="FAQ" title="Quick answers" />
