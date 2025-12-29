@@ -1,3 +1,5 @@
+// src/pages/Home.tsx
+
 import JsonLdOrganization from "../components/JsonLdOrganization";
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
@@ -61,8 +63,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How fast do you reply?",
-    answer:
-      "Within one business day. We’ll respond with a proposed direction, structure, and timeline.",
+    answer: "Within one business day. We’ll respond with a proposed direction, structure, and timeline.",
   },
 ];
 
@@ -88,8 +89,7 @@ const Home = () => {
     "@type": "WebPage",
     name: "nuViz Studio | Visual Systems Studio",
     url: "https://www.nuviz.studio/",
-    description:
-      "Visual systems studio for photography, film, music videos and design based in Paphos, Cyprus.",
+    description: "Visual systems studio for photography, film, music videos and design based in Paphos, Cyprus.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://www.nuviz.studio",
@@ -134,18 +134,9 @@ const Home = () => {
       />
 
       {/* Extra structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero (full screen desktop + mobile) */}
       <Section
@@ -186,22 +177,18 @@ const Home = () => {
                 </span>
               </h1>
 
-              <p
-  className="mt-5 text-lg text-[var(--text)] max-w-2xl code-prefix block"
-  data-prefix=">"
->
-  A disciplined visual language for image, sound, and motion.
-</p>
+              <p className="mt-5 text-lg text-[var(--text)] max-w-2xl code-prefix block" data-prefix=">">
+                A disciplined visual language for image, sound, and motion.
+              </p>
 
-<p className="mt-3 text-sm text-[var(--text)] max-w-2xl">
-  Photography, film and design for campaigns, releases and brands that need a consistent look across every output.
-</p>
+              <p className="mt-3 text-sm text-[var(--text)] max-w-2xl">
+                Photography, film and design for campaigns, releases and brands that need a consistent look across every
+                output.
+              </p>
 
-<p className="mt-3 text-sm text-[var(--muted)] max-w-2xl">
-  Built in the UK and now based in Cyprus. Working across Europe with artists,
-  brands, labels and stages.
-</p>
-
+              <p className="mt-3 text-sm text-[var(--muted)] max-w-2xl">
+                Built in the UK and now based in Cyprus. Working across Europe with artists, brands, labels and stages.
+              </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button to="/contact" className="shadow-soft">
@@ -226,8 +213,8 @@ const Home = () => {
             <>
               <p>We reduce until the image becomes inevitable — then we build the system around it.</p>
               <p className="mt-3">
-                The result translates across mediums: stage, campaign, print, screen. One idea, carried
-                cleanly from concept to final delivery.
+                The result translates across mediums: stage, campaign, print, screen. One idea, carried cleanly from
+                concept to final delivery.
               </p>
             </>
           }
@@ -269,12 +256,12 @@ const Home = () => {
           description={
             <>
               <p>
-                nuViz Studio is based in Paphos, Cyprus, creating photography, film and music videos for
-                artists, brands and labels. We also work across the UK and Europe for the right projects.
+                nuViz Studio is based in Paphos, Cyprus, creating photography, film and music videos for artists, brands
+                and labels. We also work across the UK and Europe for the right projects.
               </p>
               <p className="mt-3">
-                If you need a campaign, release or tour to look consistent across stills, motion and design,
-                we define the visual language and deliver the assets as a reusable system.
+                If you need a campaign, release or tour to look consistent across stills, motion and design, we define the
+                visual language and deliver the assets as a reusable system.
               </p>
             </>
           }
@@ -300,11 +287,7 @@ const Home = () => {
 
       {/* Selected collaborators / credits (Ticker) */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
-        <SectionHeading
-          as="h2"
-          kicker="Selected collaborators"
-          title="Work that lives in culture facing rooms."
-        />
+        <SectionHeading as="h2" kicker="Selected collaborators" title="Work that lives in culture facing rooms." />
 
         <div className="mt-8 border border-[var(--accent-dim)] bg-[var(--panel)]">
           {/* Self-contained marquee CSS so it always works */}
@@ -362,9 +345,7 @@ const Home = () => {
               {[...CREDITS, ...CREDITS].map((name, i) => (
                 <span key={`${name}-${i}`} className="inline-flex items-center gap-3">
                   <span className="font-mono text-[var(--accent-green)] opacity-70">&gt;</span>
-                  <span className="text-sm text-[var(--muted)] hover:text-[var(--text)] transition-colors">
-                    {name}
-                  </span>
+                  <span className="text-sm text-[var(--muted)] hover:text-[var(--text)] transition-colors">{name}</span>
                   <span className="font-mono text-[var(--accent-dim)] opacity-50">/</span>
                 </span>
               ))}
@@ -375,44 +356,40 @@ const Home = () => {
         <p className="mt-4 text-xs text-[var(--muted)]">Ask if you would like references or project examples.</p>
       </Section>
 
-      {/* Work / Approach */}
+      {/* Work */}
       <Section size="xl" padClassName="py-12 md:py-16" tone="borderTop">
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-7 min-w-0">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">
-                  Selected work
-                </p>
-                <h2 className="font-mono text-2xl text-[var(--text)]">Recent outputs</h2>
-              </div>
-              <TextLink to="/work">Browse the archive</TextLink>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">Selected work</p>
+              <h2 className="font-mono text-2xl text-[var(--text)]">Recent outputs</h2>
             </div>
-
-            <ProjectGrid projects={allProjects.slice(0, 6)} />
+            <TextLink to="/work">Browse the archive</TextLink>
           </div>
 
-          <aside className="lg:col-span-5 lg:pt-10 min-w-0">
-            <SectionHeading
-              as="h3"
-              kicker="Approach"
-              title="We think in sequences, not deliverables."
-              description={
-                <>
-                  <p>Listen - define - structure - execute - refine.</p>
-                  <p className="mt-3">
-                    One strong idea, carried through every frame, cut, and output — with a delivery plan
-                    your team can reuse.
-                  </p>
-                  <p className="mt-3">
-                    Based in Paphos, Cyprus with UK roots — available on location across Cyprus and for
-                    projects in the UK and Europe.
-                  </p>
-                </>
-              }
-            />
-          </aside>
+          <ProjectGrid projects={allProjects.slice(0, 6)} />
         </div>
+      </Section>
+
+      {/* Approach (moved into its own section below) */}
+      <Section size="sm" padClassName="py-12 md:py-16" tone="borderTop">
+        <SectionHeading
+          as="h2"
+          kicker="Approach"
+          title="We think in sequences, not deliverables."
+          description={
+            <>
+              <p>Listen - define - structure - execute - refine.</p>
+              <p className="mt-3">
+                One strong idea, carried through every frame, cut, and output — with a delivery plan your team can reuse.
+              </p>
+              <p className="mt-3">
+                Based in Paphos, Cyprus with UK roots — available on location across Cyprus and for projects in the UK and
+                Europe.
+              </p>
+            </>
+          }
+        />
       </Section>
 
       {/* Process */}
@@ -428,13 +405,11 @@ const Home = () => {
             steps={[
               {
                 title: "Discovery",
-                description:
-                  "References, constraints, success criteria — and a single sentence that anchors the work.",
+                description: "References, constraints, success criteria — and a single sentence that anchors the work.",
               },
               {
                 title: "System design",
-                description:
-                  "Tone, palette, pacing, typography, lighting language — documented and agreed.",
+                description: "Tone, palette, pacing, typography, lighting language — documented and agreed.",
               },
               { title: "Production", description: "Small crew, decisive direction, clean coverage." },
               {
@@ -452,21 +427,9 @@ const Home = () => {
         <div className="mt-8">
           <TestimonialBlock
             testimonials={[
-              {
-                quote: "The direction was calm, the results were sharp — everything felt intentional.",
-                name: "Producer",
-                role: "Brand film",
-              },
-              {
-                quote: "They translated one reference into an entire visual language across assets.",
-                name: "Marketing Lead",
-                role: "Campaign",
-              },
-              {
-                quote: "Fast replies, clean delivery, and a system we could keep using afterwards.",
-                name: "Artist Manager",
-                role: "Music release",
-              },
+              { quote: "The direction was calm, the results were sharp — everything felt intentional.", name: "Producer", role: "Brand film" },
+              { quote: "They translated one reference into an entire visual language across assets.", name: "Marketing Lead", role: "Campaign" },
+              { quote: "Fast replies, clean delivery, and a system we could keep using afterwards.", name: "Artist Manager", role: "Music release" },
             ]}
           />
         </div>
@@ -486,8 +449,8 @@ const Home = () => {
           <div className="min-w-0">
             <h2 className="font-mono text-xl text-[var(--text)]">Start with a reference and an intention.</h2>
             <p className="text-[var(--muted)] mt-2 max-w-2xl">
-              Send links, mood, constraints, and the outcome you need. We respond within one business day
-              with a proposed direction, structure, and timeline.
+              Send links, mood, constraints, and the outcome you need. We respond within one business day with a proposed
+              direction, structure, and timeline.
             </p>
           </div>
           <div className="md:mt-0 flex items-center gap-3">
