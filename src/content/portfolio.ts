@@ -173,6 +173,39 @@ export const photographyProjects: Project[] = [
     credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
     tags: ['Concert', 'Live Music', 'Bicep', 'Manchester'],
     location: 'Manchester, UK'
+  },
+
+  // ✅ NEW PROJECT: New Order - Manchester (2017)
+  {
+    id: 'photo-05',
+    slug: 'new-order-manchester',
+    title: 'New Order - Manchester',
+    year: 2017,
+    category: 'Photography',
+    role: 'Concert Photographer',
+    description:
+      'Concert coverage in Manchester — New Order captured with an editorial focus on light, atmosphere, and performance energy.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857322/DSC06673_ph6vhi.jpg',
+      alt: 'New Order performing live in Manchester — concert photography'
+    },
+    galleryImages: [
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857323/DSC06654_mnq0bz.jpg', alt: 'New Order live in Manchester — gallery image 01' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857323/DSC06654_mnq0bz.jpg', alt: 'New Order live in Manchester — gallery image 02' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857326/DSC06689_b1anae.jpg', alt: 'New Order live in Manchester — gallery image 03' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857320/DSC06651_bt4tfb.jpg', alt: 'New Order live in Manchester — gallery image 04' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857319/DSC06617_b8rkhx.jpg', alt: 'New Order live in Manchester — gallery image 05' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857314/DSC06559_jm776p.jpg', alt: 'New Order live in Manchester — gallery image 06' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857315/DSC06564_smn5o7.jpg', alt: 'New Order live in Manchester — gallery image 07' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857322/DSC06662_yxkevr.jpg', alt: 'New Order live in Manchester — gallery image 08' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857328/DSC06596_supmnv.jpg', alt: 'New Order live in Manchester — gallery image 09' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857318/DSC06585_rgjaea.jpg', alt: 'New Order live in Manchester — gallery image 10' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857316/DSC06529_y1mvew.jpg', alt: 'New Order live in Manchester — gallery image 11' },
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766857319/DSC06582_a78huw.jpg', alt: 'New Order live in Manchester — gallery image 12' }
+    ],
+    credits: ['Photography: nuViz', 'Edit/Grade: nuViz Studio'],
+    tags: ['Concert', 'Live Music', 'New Order', 'Manchester'],
+    location: 'Manchester, UK'
   }
 ];
 
