@@ -37,6 +37,10 @@ const CREDITS = [
   "Bicep",
   "Bugsy Malone",
   "SL",
+  "Adidas",
+  "Nike",
+  "Sodium",
+  "The Factory",
 ];
 
 const HERO_IMG =
