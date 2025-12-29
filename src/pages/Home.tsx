@@ -463,6 +463,19 @@ const Home = () => {
         </div>
       </Section>
 
+      <FullBleedImageSection
+        className="min-h-[44svh] md:min-h-[40svh]"
+        image={{
+          src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766935679/NVZ04293_dbgrnc.jpg",
+          alt: "nuViz — live photography frame",
+        }}
+        kicker="Work"
+        title="Built as a system"
+        subtitle="One strong idea carried through every frame — so the output feels consistent across campaigns, stages and screens."
+        primaryCta={{ label: "Check availability", to: "/contact" }}
+        secondaryCta={{ label: "View work", to: "/work" }}
+      />
+
       {/* FAQ */}
       <Section size="lg" padClassName="py-12 md:py-16" tone="borderTop">
         <SectionHeading as="h2" kicker="FAQ" title="Quick answers" />
