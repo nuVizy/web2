@@ -16,10 +16,10 @@ import { allProjects } from "../content/portfolio";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const CREDITS = [
-  "MIF | Festival",
-  "Soul:r | MC DRS",
-  "Royal Exchange | Theatre",
-  "Trillden | Black Josh",
+  "Manchester International Festival",
+  "MC DRS",
+  "Royal Exchange Theatre",
+  "Black Josh",
   "Children of Zeus",
   "Goldie",
   "Warehouse Project",
