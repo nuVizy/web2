@@ -16,7 +16,7 @@ import { allProjects } from "../content/portfolio";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const CREDITS = [
-  "MIF | Festival",
+  "Manchester International Festival",
   "Soul:r",
   "Royal Exchange Theatre",
   "Black Josh",
