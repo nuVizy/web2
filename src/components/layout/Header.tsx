@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Container from "../ui/Container";
 import { classNames } from "../../lib/classNames";
@@ -11,101 +11,8 @@ const navItems = [
   { to: "/music-videos", label: "Music Videos" },
   { to: "/design", label: "Design" },
   { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" }
+  { to: "/contact", label: "Contact" },
 ];
-
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-const pick = () => ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
-
-type ScrambleNavLinkProps = {
-  to: string;
-  label: string;
-  end?: boolean;
-  onClick?: () => void;
-  prefix?: React.ReactNode;
-  labelClassName?: string;
-  className: (args: { isActive: boolean }) => string;
-};
-
-const ScrambleNavLink = ({ to, label, end, onClick, prefix, labelClassName, className }: ScrambleNavLinkProps) => {
-  const textRef = useRef<HTMLSpanElement | null>(null);
-  const rafRef = useRef<number | null>(null);
-
-  const reduceMotion = useMemo(() => {
-    if (typeof window === "undefined") return false;
-    return window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-  }, []);
-
-  const stop = () => {
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = null;
-  };
-
-  const reset = () => {
-    stop();
-    if (textRef.current) textRef.current.textContent = label;
-  };
-
-  useEffect(() => {
-    // If label changes, ensure it displays correctly
-    reset();
-    return () => stop();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [label]);
-
-  const animate = () => {
-    if (reduceMotion) return;
-    const el = textRef.current;
-    if (!el) return;
-
-    stop();
-
-    const original = label;
-    const start = performance.now();
-    const duration = 520;
-
-    const frame = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
-      const reveal = Math.floor(t * original.length);
-
-      const next = original
-        .split("")
-        .map((ch, i) => {
-          if (ch === " ") return " ";
-          return i < reveal ? original[i] : pick();
-        })
-        .join("");
-
-      el.textContent = next;
-
-      if (t < 1) rafRef.current = requestAnimationFrame(frame);
-      else el.textContent = original;
-    };
-
-    rafRef.current = requestAnimationFrame(frame);
-  };
-
-  return (
-    <NavLink
-      to={to}
-      end={end}
-      onClick={onClick}
-      aria-label={label}
-      className={className}
-      onMouseEnter={animate}
-      onMouseLeave={reset}
-      onFocus={animate}
-      onBlur={reset}
-    >
-      {prefix}
-      {/* Keep a stable label for assistive tech; scramble only the visual span */}
-      <span className="sr-only">{label}</span>
-      <span ref={textRef} aria-hidden="true" className={labelClassName}>
-        {label}
-      </span>
-    </NavLink>
-  );
-};
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -134,4 +41,145 @@ const Header = () => {
       <Container size="lg">
         <div className="flex items-center justify-between h-20 py-4">
           {/* Brand: nuViz // VISUAL SYSTEMS */}
-          <Link to="/" className="flex items-center gap-3 font-display text-sm" onCl
+          <Link
+            to="/"
+            className="flex items-center gap-3 font-display text-sm"
+            onClick={closeMenu}
+          >
+            <span className="text-[var(--accent-green)] font-mono text-xs tracking-wider">
+              nuViz
+            </span>
+            <span className="text-[var(--muted)] font-mono text-xs tracking-wider">
+              {"//"}
+            </span>
+            <span className="text-[var(--muted)] font-mono text-xs tracking-wider">
+              visual systems
+            </span>
+          </Link>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === "/"}
+                className={({ isActive }) =>
+                  classNames(
+                    "transition-colors duration-200 border-b border-transparent",
+                    "hover:text-[var(--accent-green)] hover:border-[rgba(140,255,46,0.18)]",
+                    isActive
+                      ? "text-[var(--accent-green)] border-[var(--accent-dim)]"
+                      : "text-[var(--muted)]"
+                  )
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Mobile toggle (× / +) */}
+          <button
+            type="button"
+            className="md:hidden h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.10)]"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-controls="mobile-nav"
+            aria-expanded={open}
+            onClick={handleToggle}
+          >
+            {open ? (
+              <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">
+                ×
+              </span>
+            ) : (
+              <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">
+                +
+              </span>
+            )}
+          </button>
+        </div>
+      </Container>
+
+      {/* Fullscreen mobile menu */}
+      {open && (
+        <div
+          className="md:hidden fixed inset-0 z-[60] bg-black text-[var(--accent-green)]"
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Top bar (brand + close) */}
+          <div className="absolute inset-x-0 top-0">
+            <Container size="lg">
+              <div className="flex items-center justify-between h-20 py-4">
+                {/* Brand: nuViz // Visual Systems */}
+                <Link
+                  to="/"
+                  className="flex items-center gap-3 font-display text-sm"
+                  onClick={closeMenu}
+                >
+                  <span className="text-[var(--accent-green)] font-mono text-xs tracking-wider">
+                    nuViz
+                  </span>
+                  <span className="text-white/40 font-mono text-xs tracking-wider">
+                    {"//"}
+                  </span>
+                  <span className="text-white/40 font-mono text-xs tracking-wider">
+                    visual systems
+                  </span>
+                </Link>
+
+                <button
+                  type="button"
+                  className="h-11 w-11 inline-flex items-center justify-center rounded-subtle border border-[rgba(140,255,46,0.18)]"
+                  aria-label="Close menu"
+                  onClick={closeMenu}
+                >
+                  <span className="font-mono text-2xl leading-none text-[var(--accent-green)]">
+                    ×
+                  </span>
+                </button>
+              </div>
+            </Container>
+          </div>
+
+          {/* Centered menu */}
+          <nav
+            id="mobile-nav"
+            className="h-full flex items-center justify-center px-6 pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)]"
+          >
+            <ul className="w-full max-w-sm flex flex-col gap-4">
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    onClick={closeMenu}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      classNames(
+                        "min-h-[44px] inline-flex items-center gap-3 w-full font-mono text-2xl tracking-tight",
+                        "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-green)] focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+                        isActive
+                          ? "text-[var(--accent-green)]"
+                          : "text-[rgba(140,255,46,0.85)] hover:text-[var(--accent-green)]"
+                      )
+                    }
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="text-[rgba(140,255,46,0.65)]"
+                    >
+                      &gt;
+                    </span>
+                    <span>{item.label}</span>
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
