@@ -243,9 +243,6 @@ const Home = () => {
        kicker="LIGHT LANGUAGE"
 title="Atmosphere first"
 subtitle="We shape light, tone, and texture — so every frame carries the same emotional temperature."
-
-        primaryCta={{ label: "Check availability", to: "/contact" }}
-        secondaryCta={{ label: "View work", to: "/work" }}
       />
 
       {/* Services strip */}
