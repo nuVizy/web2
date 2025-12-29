@@ -1,3 +1,5 @@
+// src/pages/MusicVideos.tsx
+
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
@@ -23,7 +25,7 @@ const MusicVideos = () => {
       <Section
         bleed
         padClassName="pt-20 pb-10 md:pt-28 md:pb-14"
-        className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-[78vh] flex flex-col"
+        className="relative overflow-hidden ctx-grid min-h-[100svh] md:min-h-screen flex flex-col"
       >
         {/* Fullscreen background image (centered on mobile) */}
         <div className="absolute inset-0 pointer-events-none">
@@ -108,7 +110,11 @@ const MusicVideos = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <SectionHeaderRow
           title="Selected videos"
-          action={<TextLink className="min-h-[44px]" to="/work">View all work</TextLink>}
+          action={
+            <TextLink className="min-h-[44px]" to="/work">
+              View all work
+            </TextLink>
+          }
         />
         <ProjectGrid projects={musicVideoProjects} />
       </Section>
