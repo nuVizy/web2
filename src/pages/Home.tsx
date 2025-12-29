@@ -16,10 +16,10 @@ import { allProjects } from "../content/portfolio";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const CREDITS = [
-  "Manchester International Festival",
-  "Soul:r",
-  "Royal Exchange Theatre",
-  "Black Josh",
+  "MIF | Festival",
+  "Soul:r | MC DRS",
+  "Royal Exchange | Theatre",
+  "Trillden | Black Josh",
   "Children of Zeus",
   "Goldie",
   "Warehouse Project",
@@ -37,18 +37,6 @@ const CREDITS = [
   "Bicep",
   "Bugsy Malone",
   "SL",
-  "Adidas",
-  "Nike",
-  "Sodium",
-  "The Factory",
-  "MC DRS",
-  "New Order",
-  "Strategy",
-  "La Roux",
-  "Airmax Always",
-  "Deluxe Details",
-  "Sleazy F Baby",
-  "IAMDDB",
 ];
 
 const HERO_IMG =
@@ -301,7 +289,7 @@ const Home = () => {
       <FullBleedImageSection
         className="min-h-[56svh] md:min-h-[40svh]"
         image={{
-          src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766855709/DSC09562_g3id0y.jpg",
+          src: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg",
           alt: "Film crew on location in Cyprus",
         }}
         kicker="On location"
