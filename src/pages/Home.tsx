@@ -17,9 +17,9 @@ import { usePageMeta } from "../hooks/usePageMeta";
 
 const CREDITS = [
   "MIF | Festival",
-  "Soul:r | MC DRS",
-  "Royal Exchange | Theatre",
-  "Trillden | Black Josh",
+  "Soul:r",
+  "Royal Exchange Theatre",
+  "Black Josh",
   "Children of Zeus",
   "Goldie",
   "Warehouse Project",
@@ -41,6 +41,14 @@ const CREDITS = [
   "Nike",
   "Sodium",
   "The Factory",
+  "MC DRS",
+  "New Order",
+  "Strategy",
+  "La Roux",
+  "Airmax Always",
+  "Deluxe Details",
+  "Sleazy F Baby",
+  "IAMDDB",
 ];
 
 const HERO_IMG =
