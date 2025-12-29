@@ -466,8 +466,7 @@ const Home = () => {
       <FullBleedImageSection
         className="min-h-[44svh] md:min-h-[40svh]"
         image={{
-          src: "https://res.cloudinary.com/de8d8i155/image/upload/a_hflip/v1766855977/NVZ02864_llzyag.jpg
-",
+          src: "https://res.cloudinary.com/de8d8i155/image/upload/a_hflip/v1766855977/NVZ02864_llzyag.jpg",
           alt: "nuViz — live photography frame",
         }}
        kicker="LIGHT LANGUAGE"
