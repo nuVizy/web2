@@ -203,11 +203,6 @@ const Home = () => {
                 look across every output.
               </p>
 
-              <p className="mt-3 text-xs text-[var(--muted)] max-w-2xl">
-                Built in the UK and now based in Cyprus. Working across Europe with artists, brands,
-                labels and stages.
-              </p>
-
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button to="/contact" className="shadow-soft">
                   Check availability
