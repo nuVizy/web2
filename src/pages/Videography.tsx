@@ -26,47 +26,19 @@ const Videography = () => {
         padClassName="pt-28 pb-12 md:pt-36 md:pb-16"
         className="relative overflow-hidden ctx-grid min-h-[100svh] flex flex-col w-full max-w-full"
       >
-        {/* Hero background image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://res.cloudinary.com/de8d8i155/image/upload/v1766877504/29b1f1af-d0a3-48de-8824-c759aac8616a.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/55" />
-        </div>
-
-        {/* Content pinned to bottom */}
-        <Container size="lg" className="relative mt-auto w-full max-w-full">
-          <div className="grid grid-cols-12 gap-8 md:gap-10 items-end w-full min-w-0">
-            {/* Full width (no right card) */}
-            <div className="col-span-12 min-w-0">
-              <SectionHeading
-                kicker="Videography"
-                title="Films that breathe, with crisp pacing"
-                description={
-                  <>
-                    <p>
-                      Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep
-                      stories human while keeping crews nimble.
-                    </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-4 min-w-0">
-                      <Button to="/contact">Start a project</Button>
-                      <Button variant="ghost" to="/music-videos">
-                        See music videos
-                      </Button>
-                    </div>
-                  </>
-                }
-              />
-            </div>
-          </div>
-        </Container>
-      </Section>
+        {/* HERO */}
+<FullBleedImageSection
+  className="flex flex-col justify-end"
+  image={{
+    src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766877504/29b1f1af-d0a3-48de-8824-c759aac8616a.png",
+    alt: "nuViz — videography frame",
+  }}
+  kicker="Videography"
+  title="Films that breathe, with crisp pacing"
+  subtitle="Brand films, documentaries, and event coverage crafted with steady direction and polished post. We keep stories human while keeping crews nimble."
+  primaryCta={{ label: "Start a project", to: "/contact" }}
+  secondaryCta={{ label: "See music videos", to: "/music-videos" }}
+/>
 
       {featuredFilm ? (
         <div className="w-full max-w-[100vw] overflow-x-hidden">
