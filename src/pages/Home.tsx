@@ -469,9 +469,10 @@ const Home = () => {
           src: "https://res.cloudinary.com/de8d8i155/image/upload/v1766855977/NVZ02864_llzyag.jpg",
           alt: "nuViz — live photography frame",
         }}
-        kicker="Work"
-        title="Built as a system"
-        subtitle="One strong idea carried through every frame — so the output feels consistent across campaigns, stages and screens."
+       kicker="LIGHT LANGUAGE"
+title="Atmosphere first"
+subtitle="We shape light, tone, and texture — so every frame carries the same emotional temperature."
+
         primaryCta={{ label: "Check availability", to: "/contact" }}
         secondaryCta={{ label: "View work", to: "/work" }}
       />
