@@ -1,3 +1,5 @@
+// src/pages/Videography.tsx
+
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import FAQAccordion from '../components/ui/FAQAccordion';
@@ -19,10 +21,10 @@ const Videography = () => {
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden">
-      {/* HERO (match Photography style) */}
+      {/* HERO (full screen on mobile + desktop) */}
       {featuredFilm ? (
         <FullBleedImageSection
-          className="min-h-[44svh] md:min-h-[40svh] flex flex-col justify-end"
+          className="min-h-[100svh] md:min-h-screen flex flex-col justify-end"
           image={featuredFilm.coverImage}
           kicker="Videography"
           title="Films that breathe, with crisp pacing"
@@ -32,7 +34,7 @@ const Videography = () => {
         />
       ) : (
         <FullBleedImageSection
-          className="min-h-[44svh] md:min-h-[40svh] flex flex-col justify-end"
+          className="min-h-[100svh] md:min-h-screen flex flex-col justify-end"
           image={{
             src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1766877504/29b1f1af-d0a3-48de-8824-c759aac8616a.png',
             alt: 'nuViz — videography frame'
