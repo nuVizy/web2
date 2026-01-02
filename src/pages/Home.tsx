@@ -73,7 +73,7 @@ const FAQ_ITEMS = [
 
 const Home = () => {
   usePageMeta({
-    title: "nuViz Studio | Photography, Film & Design in Cyprus (Paphos)",
+    title: "nuViz Studio | Photography, Film & Design in Cyprus",
     description:
       "nuViz is a visual systems studio based in Cyprus. Photography, film production, music videos and design for artists, brands and labels across Cyprus, the UK and Europe.",
     canonicalPath: "/",
