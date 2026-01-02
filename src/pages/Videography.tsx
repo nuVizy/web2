@@ -95,7 +95,7 @@ const Videography = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center min-w-0">
           <div className="min-w-0">
-            <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Process clarity</h2>
+            <h3 className="font-mono text-2xl text-[var(--text)] mb-3">Process clarity</h3>
             <FAQAccordion
               items={[
                 {

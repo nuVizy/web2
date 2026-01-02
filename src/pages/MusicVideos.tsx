@@ -78,7 +78,7 @@ const MusicVideos = () => {
                 { title: 'Premium', detail: 'Narrative arcs, choreography, art direction, BTS stills.' }
               ].map((pkg) => (
                 <Card key={pkg.title} pad="md">
-                  <h3 className="font-mono text-lg text-[var(--text)] mb-2">{pkg.title}</h3>
+                  <h4 className="font-mono text-lg text-[var(--text)] mb-2">{pkg.title}</h4>
                   <p className="text-sm text-[var(--muted)]">{pkg.detail}</p>
                 </Card>
               ))}
@@ -123,7 +123,7 @@ const MusicVideos = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
           <div className="min-w-0">
-            <h2 className="font-mono text-2xl text-[var(--text)] mb-3">FAQs</h2>
+            <h3 className="font-mono text-2xl text-[var(--text)] mb-3">FAQs</h3>
             <FAQAccordion
               items={[
                 {

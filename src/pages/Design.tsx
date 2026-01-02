@@ -91,7 +91,7 @@ const Design = () => {
               { title: 'Album visuals', text: 'Cover art, inner sleeves, stickers, and motion snippets aligned to your sonic palette.' }
             ].map((item) => (
               <div key={item.title} className="border border-[var(--accent-dim)] bg-[var(--panel)] p-6">
-                <h3 className="font-mono text-lg text-[var(--text)] mb-2">{item.title}</h3>
+                <h4 className="font-mono text-lg text-[var(--text)] mb-2">{item.title}</h4>
                 <p className="text-sm text-[var(--muted)]">{item.text}</p>
               </div>
             ))}
@@ -114,7 +114,7 @@ const Design = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 items-center">
           <div className="min-w-0">
-            <h2 className="font-mono text-2xl text-[var(--text)] mb-3">Mini case notes</h2>
+            <h3 className="font-mono text-2xl text-[var(--text)] mb-3">Mini case notes</h3>
             <div className="space-y-3 text-sm text-[var(--muted)]">
               <div className="border border-[var(--accent-dim)] bg-[var(--panel)] p-4">
                 <p className="font-mono text-[var(--text)]">Pulse Identity</p>

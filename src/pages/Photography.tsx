@@ -42,7 +42,7 @@ const Photography = () => {
       {/* SERVICES (full-width now) */}
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="max-w-3xl">
-          <h2 className="font-mono text-2xl text-[var(--text)] mb-2">Services & guidance</h2>
+          <h3 className="font-mono text-2xl text-[var(--text)] mb-2">Services & guidance</h3>
           <p className="text-[var(--muted)] mb-6">
             We design shoots around clear tone and pacing. Expect pre production support, on set direction, and considered
             retouching.
@@ -65,7 +65,7 @@ const Photography = () => {
       <Section size="lg" tone="borderTop" padClassName="py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           <div>
-            <h2 className="font-mono text-2xl text-[var(--text)] mb-3">FAQ</h2>
+            <h3 className="font-mono text-2xl text-[var(--text)] mb-3">FAQ</h3>
             <FAQAccordion
               items={[
                 {

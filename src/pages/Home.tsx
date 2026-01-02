@@ -390,12 +390,7 @@ subtitle="We shape light, tone, and texture — so every frame carries the same 
       <Section size="xl" padClassName="py-12 md:py-16" tone="borderTop">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">
-                Selected work
-              </p>
-              <h2 className="font-mono text-2xl text-[var(--text)]">Recent outputs</h2>
-            </div>
+            <SectionHeading as="h2" kicker="Selected work" title="Recent outputs" />
             <TextLink to="/work">Browse the archive</TextLink>
           </div>
 
@@ -483,8 +478,7 @@ subtitle="We shape light, tone, and texture — so every frame carries the same 
           <div className="min-w-0">
             <h2 className="font-mono text-xl text-[var(--text)]">Start with a reference and an intention.</h2>
             <p className="text-[var(--muted)] mt-2 max-w-2xl">
-              Send links, mood, constraints, and the outcome you need. We respond within one business day
-              with a proposed direction, structure, and timeline.
+              Send links, mood, constraints, and the outcome you need. We respond within one business day with a proposed direction, structure, and timeline.
             </p>
           </div>
           <div className="md:mt-0 flex items-center gap-3">
