@@ -75,7 +75,7 @@ const Home = () => {
   usePageMeta({
     title: "nuViz Studio | Photography, Film & Design in Cyprus (Paphos)",
     description:
-      "nuViz is a visual systems studio based in Paphos, Cyprus (built in the UK). Photography, film production, music videos and design for artists, brands and labels across Cyprus, the UK and Europe.",
+      "nuViz is a visual systems studio based in Cyprus. Photography, film production, music videos and design for artists, brands and labels across Cyprus, the UK and Europe.",
     canonicalPath: "/",
     ogType: "website",
     ogImage: OG_IMG,
@@ -187,7 +187,7 @@ const Home = () => {
                 nuViz
                 <span className="sr-only">
                   {" "}
-                  — Visual systems studio in Cyprus for photography, film, music videos and design
+                  | Visual systems studio in Cyprus for photography, film, music videos and design
                 </span>
               </h1>
 
