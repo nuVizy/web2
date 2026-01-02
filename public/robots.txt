@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /.git/
+
+Crawl-delay: 1
+
+Sitemap: https://nuviz.studio/sitemap.xml
