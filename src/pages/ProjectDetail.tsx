@@ -64,7 +64,7 @@ const ProjectDetail = () => {
       </Section>
 
       <Container size="md">
-        <div className="aspect-video rounded-subtle overflow-hidden border border-[var(--accent-dim)] mb-6">
+        <div className="rounded-subtle overflow-hidden border border-[var(--accent-dim)] mb-6" style={{ aspectRatio: project.category === 'Design' ? '1' : '16 / 9' }}>
           <img src={project.coverImage.src} alt={project.coverImage.alt} className="w-full h-full object-cover" />
         </div>
       </Container>
