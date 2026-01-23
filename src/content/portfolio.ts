@@ -217,7 +217,7 @@ export const designProjects: Project[] = [
     id: 'design-01',
     slug: 'nick-shahlavi-album',
     title: 'Nick Shahlavi - Album Artwork',
-    year: 2024,
+    year: 2026,
     category: 'Design',
     role: 'Album Cover Designer',
     description:
