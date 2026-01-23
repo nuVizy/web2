@@ -228,6 +228,7 @@ export const designProjects: Project[] = [
     },
     galleryImages: [
       { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1769182712/ALBUM_FRONT_COVER_-_Personal_wnl0my.jpg', alt: 'Nick Shahlavi album artwork — front cover' }
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1769182736/ALBUM_BACK_COVER_gqx2za.jpg', alt: 'Nick Shahlavi album artwork — back cover' }
     ],
     credits: ['Design: nuViz Studio', 'Album: Nick Shahlavi'],
     tags: ['Album Artwork', 'Cover Design', 'Music']
