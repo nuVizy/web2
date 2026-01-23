@@ -209,10 +209,30 @@ export const photographyProjects: Project[] = [
   }
 ];
 
-// These exports prevent import errors from other pages
 export const videographyProjects: Project[] = [];
 export const musicVideoProjects: Project[] = [];
-export const designProjects: Project[] = [];
+
+export const designProjects: Project[] = [
+  {
+    id: 'design-01',
+    slug: 'nick-shahlavi-album',
+    title: 'Nick Shahlavi - Album Artwork',
+    year: 2024,
+    category: 'Design',
+    role: 'Album Cover Designer',
+    description:
+      'Album artwork design for Nick Shahlavi — a contemporary interpretation of visual identity blending digital and organic elements. Created as the primary cover image for the album release.',
+    coverImage: {
+      src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1769182712/ALBUM_FRONT_COVER_-_Personal_wnl0my.jpg',
+      alt: 'Nick Shahlavi album artwork — cover art design'
+    },
+    galleryImages: [
+      { src: 'https://res.cloudinary.com/de8d8i155/image/upload/v1769182712/ALBUM_FRONT_COVER_-_Personal_wnl0my.jpg', alt: 'Nick Shahlavi album artwork — front cover' }
+    ],
+    credits: ['Design: nuViz Studio', 'Album: Nick Shahlavi'],
+    tags: ['Album Artwork', 'Cover Design', 'Music']
+  }
+];
 
 // Aliases (in case your pages use slightly different names)
 export const musicVideosProjects = musicVideoProjects;
